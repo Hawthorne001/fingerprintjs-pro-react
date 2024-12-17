@@ -23,15 +23,20 @@ Fingerprint is a device intelligence platform offering 99.5% accurate visitor id
 
 ## Table of contents
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Getting started](#getting-started)
-- [Linking and tagging information](#linking-and-tagging-information)
-- [Caching strategy](#caching-strategy)
-- [Error handling](#error-handling)
-- [API Reference](#api-reference)
-- [Support and feedback](#support-and-feedback)
-- [License](#license)
+
+- [Fingerprint Pro React](#fingerprint-pro-react)
+  - [Table of contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Getting started](#getting-started)
+    - [1. Wrap your application (or component) in `<FpjsProvider>`.](#1-wrap-your-application-or-component-in-fpjsprovider)
+    - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
+  - [Linking and tagging information](#linking-and-tagging-information)
+  - [Caching strategy](#caching-strategy)
+  - [Error handling](#error-handling)
+  - [API Reference](#api-reference)
+  - [Support and feedback](#support-and-feedback)
+  - [License](#license)
 
 ## Requirements
 
@@ -71,8 +76,9 @@ To get your API key and get started, see the [Fingerprint Pro Quick Start Guide]
 ### 1. Wrap your application (or component) in `<FpjsProvider>`.
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
-- Set `region` if you have chosen a non-global [region](ttps://dev.fingerprint.com/docs/regions) during registration.
+- Set `region` if you have chosen a non-global [region](https://dev.fingerprint.com/docs/regions) during registration.
 - Set `endpoint` and `scriptUrlPattern` if you are using [one of our proxy integrations to increase accuracy](https://dev.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
+- You can use all the [load options](https://dev.fingerprint.com/reference/load-function#load-options) available in the JavaScript agent `load` function.
 
 ```jsx
 // src/index.js
@@ -142,6 +148,8 @@ The `useVisitorData` hook also returns a `getData` method you can use to make an
 
 - You can pass `{ ignoreCache: true }` to `useVisitorData` to force a fresh identification request.
 - You can pass `{ immediate: false }` to `useVisitorData` to disable automatic visitor identification on render.
+
+Both `useVisitorData` and `getData` accept all the [get options](https://dev.fingerprint.com/reference/get-function#get-options) available in the JavaScript agent `get` function.
 
 ```jsx
 // src/App.js
@@ -221,17 +229,18 @@ function App() {
 Fingerprint Pro usage is billed per API call. To avoid unnecessary API calls, it is a good practice to cache identification results. By default, the SDK uses `sessionStorage` to cache results.
 
 - Specify the `cacheLocation` prop on `<FpjsProvider>` to instead store results in `memory` or `localStorage`. Use `none` to disable caching completely.
+- Specify the `cacheTimeInSeconds` prop on `<FpjsProvider>` to set the cache time in seconds. It cannot exceed 86400 seconds (24 hours).
 - Specify the `cache` prop on `<FpjsProvider>` to use your custom cache implementation instead. For more details, see [Creating a custom cache](https://github.com/fingerprintjs/fingerprintjs-pro-spa#creating-a-custom-cache)
   in the Fingerprint Pro SPA repository (a lower-level Fingerprint library used by this SDK).
 - Pass `{ignoreCache: true}` to the `getData()` function to ignore cached results for that specific API call.
 
 > [!NOTE]
-> If you use data from [`extendedResult`](https://dev.fingerprint.com/docs/js-agent#extendedresult), pay additional attention to your caching strategy.
+> If you use data from [`extendedResult`](https://dev.fingerprint.com/reference/get-function#extendedresult), pay additional attention to your caching strategy.
 > Some fields, for example, `ip` or `lastSeenAt`, might change over time for the same visitor. Use `getData({ ignoreCache: true })` to fetch the latest identification results.
 
 ## Error handling
 
-The `getData` function throws errors directly from the JS Agent without changing them. See [JS Agent error handling](https://dev.fingerprint.com/docs/js-agent#error-handling) for more details.
+The `getData` function throws errors directly from the JS Agent without changing them. See [JS Agent error handling](https://dev.fingerprint.com/reference/error-handling) for more details.
 
 ## API Reference
 
@@ -239,7 +248,7 @@ See the full [generated API reference](https://fingerprintjs.github.io/fingerpri
 
 ## Support and feedback
 
-To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/fingerprintjs-pro-react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [open-source FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
+To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/fingerprintjs-pro-react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [source-availalbe FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
 
 ## License
 
