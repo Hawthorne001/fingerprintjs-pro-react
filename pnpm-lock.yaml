@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@fingerprint/agent':
-        specifier: 4.0.0-beta.3
-        version: 4.0.0-beta.3
+        specifier: 4.0.0-beta.5
+        version: 4.0.0-beta.5
       fast-deep-equal:
         specifier: 3.1.3
         version: 3.1.3
@@ -1575,8 +1575,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@fingerprint/agent@4.0.0-beta.3':
-    resolution: {integrity: sha512-VXWSDfcWXGm3AJ6BDwBS9aB4I+EKPkCVwnBWj9G/9P159VBIgUadjoaPhPKkUrGMNEwevOHKXHk4nOWQ2laC8g==}
+  '@fingerprint/agent@4.0.0-beta.5':
+    resolution: {integrity: sha512-XtylYPFIv5lh2x6iXTjOeZmQy1UYFaEhDxwtCk/mPUExOOb/htWt617q9XQb4ShoHta+BTsh63yeFHrWTYFzYQ==}
 
   '@fingerprintjs/commit-lint-dx-team@0.0.2':
     resolution: {integrity: sha512-8FDlPI+KhnWsfbf4Lo/TERdiHl9daMhnZb4MsV5nhrta13XXGRSxOvLPUnFmZA0FsxR4HHzpszlr7ZSoPVaLSg==}
@@ -11583,7 +11583,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@fingerprint/agent@4.0.0-beta.3': {}
+  '@fingerprint/agent@4.0.0-beta.5': {}
 
   '@fingerprintjs/commit-lint-dx-team@0.0.2':
     dependencies:
