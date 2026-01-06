@@ -1,3 +1,10 @@
+## [3.0.0-test.2](https://github.com/fingerprintjs/fingerprintjs-pro-react/compare/v3.0.0-test.1...v3.0.0-test.2) (2026-01-06)
+
+
+### Features
+
+* bump @fingerprint/agent to 4.0.0-beta.5 ([c5d217d](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/c5d217d36c08fddcf955e2f4b198ff5e37320f4f))
+
 ## [3.0.0-test.1](https://github.com/fingerprintjs/fingerprintjs-pro-react/compare/v2.7.1...v3.0.0-test.1) (2025-12-19)
 
 
