@@ -29,7 +29,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Getting started](#getting-started)
-    - [1. Wrap your application (or component) in `<FpProvider>`.](#1-wrap-your-application-or-component-in-FpProvider)
+    - [1. Wrap your application (or component) in `<FpProvider>`.](#1-wrap-your-application-or-component-in-fpprovider)
     - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
   - [Linking and tagging information](#linking-and-tagging-information)
   - [Caching strategy](#caching-strategy)
@@ -77,7 +77,7 @@ To get your API key and get started, see the [Fingerprint Pro Quick Start Guide]
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
 - Set `region` if you have chosen a non-global [region](https://docs.fingerprint.com/docs/regions) during registration.
-- Set `endpoint`` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
+- Set `endpoint` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
 - You can use all the [start options](https://docs.fingerprint.com/reference/js-agent-v4-start-function#start-options) available in the JavaScript agent `load` function.
 
 ```jsx
