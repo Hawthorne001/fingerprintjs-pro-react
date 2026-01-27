@@ -11,7 +11,5 @@ export interface EnvDetails {
 }
 
 export function isEnvDetails(value: unknown): value is EnvDetails {
-  console.log('isEnvDetails')
-  /* @__PURE__ */
   return typeof value === 'object' && value !== null && 'name' in value
 }
