@@ -44,7 +44,7 @@ pnpm lint:fix
 
 ### How to test
 
-Tests are located in `__tests__` folder and run by [jest](https://jestjs.io/) in [jsdom](https://github.com/jsdom/jsdom) environment.
+Tests are located in `__tests__` folder and run by [vitest](https://vitest.dev/) in [jsdom](https://github.com/jsdom/jsdom) environment.
 
 To run tests you can use IDE instruments or just run:
 

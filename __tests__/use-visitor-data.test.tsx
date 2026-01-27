@@ -1,10 +1,11 @@
 import { useVisitorData, UseVisitorDataReturn } from '../src'
-import { render, renderHook } from '@testing-library/react'
+import { act, render, renderHook } from '@testing-library/react'
 import { actWait, createWrapper, wait } from './helpers'
-import { act } from 'react-dom/test-utils'
 import { useEffect, useState } from 'react'
 import userEvent from '@testing-library/user-event'
+import * as agent from '@fingerprint/agent'
 import { GetResult } from '@fingerprint/agent'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 const mockGetResult = {
   visitor_id: 'kOzFgO0kw2Eivvb14mRL',
@@ -14,23 +15,19 @@ const mockGetResult = {
   suspect_score: 0.5,
 } satisfies GetResult
 
-const mockGet = jest.fn()
+const mockGet = vi.fn()
 const mockAgent = {
   get: mockGet,
+  collect: vi.fn(),
 }
 
-const mockStart = jest.requireMock('@fingerprint/agent').start as jest.Mock
+vi.mock('@fingerprint/agent', { spy: true })
 
-jest.mock('@fingerprint/agent', () => {
-  return {
-    ...jest.requireActual('@fingerprint/agent'),
-    start: jest.fn(),
-  }
-})
+const mockStart = vi.mocked(agent.start)
 
 describe('useVisitorData', () => {
   beforeEach(() => {
-    jest.resetAllMocks()
+    vi.resetAllMocks()
 
     mockStart.mockReturnValue(mockAgent)
   })

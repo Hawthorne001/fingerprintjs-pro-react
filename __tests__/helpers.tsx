@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react'
 import { FpProvider, FpProviderOptions } from '../src'
-import { act } from 'react-dom/test-utils'
+import { act } from '@testing-library/react'
 
 export const getDefaultLoadOptions = () => ({
   apiKey: 'test_api_key',

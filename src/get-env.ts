@@ -1,13 +1,12 @@
 import { env } from './env'
-import { EnvDetails } from './env.types'
+import { EnvDetails, isEnvDetails } from './env.types'
 import { detectEnvironment, type DetectEnvParams } from './detect-env'
 
-export function getEnvironment(params: DetectEnvParams) {
+export function getEnvironment(params: DetectEnvParams): EnvDetails {
   try {
-    const parsedEnv = JSON.parse(env)
-
-    if (typeof parsedEnv === 'object') {
-      return parsedEnv as EnvDetails
+    const jsonEnv = JSON.parse(env)
+    if (isEnvDetails(jsonEnv)) {
+      return jsonEnv
     }
   } catch {
     // Nothing here...

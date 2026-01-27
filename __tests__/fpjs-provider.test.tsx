@@ -3,15 +3,12 @@ import { renderHook } from '@testing-library/react'
 import { FpContext } from '../src'
 import { createWrapper, getDefaultLoadOptions } from './helpers'
 import { version } from '../package.json'
+import { describe, it, expect, vi } from 'vitest'
+import * as agent from '@fingerprint/agent'
 
-jest.mock('@fingerprint/agent', () => {
-  return {
-    ...jest.requireActual<any>('@fingerprint/agent'),
-    start: jest.fn(),
-  }
-})
+vi.mock('@fingerprint/agent', { spy: true })
 
-const mockStart = jest.requireMock('@fingerprint/agent').start as jest.Mock
+const mockStart = vi.mocked(agent.start)
 
 describe('FpProvider', () => {
   it('should configure an instance of the Fp Agent', async () => {
