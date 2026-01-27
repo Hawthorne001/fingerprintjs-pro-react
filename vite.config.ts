@@ -17,14 +17,8 @@ export default defineConfig({
       formats: ['cjs', 'es'],
     },
     rollupOptions: {
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
-      },
       plugins: [banner2(() => `'use client';\n`)],
-      external: ['react', 'react-dom', ...Object.keys(dependencies)],
+      external: ['react', 'react-dom', 'react/jsx-runtime', ...Object.keys(dependencies)],
     },
   },
   plugins: [
