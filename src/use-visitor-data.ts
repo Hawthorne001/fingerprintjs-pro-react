@@ -81,8 +81,6 @@ export function useVisitorData(
       } catch (unknownError) {
         const error = toError(unknownError)
 
-        error.name = 'FPAgentError'
-
         setQueryState({
           isLoading: false,
           isFetched: false,
