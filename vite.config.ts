@@ -13,7 +13,7 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: 'src/index.ts',
-      fileName: 'fp-pro-react',
+      fileName: 'fp-react',
       formats: ['cjs', 'es'],
     },
     rollupOptions: {

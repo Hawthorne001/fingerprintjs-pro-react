@@ -2,14 +2,14 @@
   "name": "@fingerprint/react",
   "version": "2.7.1",
   "description": "FingerprintJS Pro React SDK",
-  "main": "dist/fp-pro-react.js",
-  "module": "dist/fp-pro-react.mjs",
-  "types": "dist/fp-pro-react.d.ts",
+  "main": "dist/fp-react.js",
+  "module": "dist/fp-react.mjs",
+  "types": "dist/fp-react.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/fp-pro-react.d.ts",
-      "import": "./dist/fp-pro-react.mjs",
-      "require": "./dist/fp-pro-react.js"
+      "types": "./dist/fp-react.d.ts",
+      "import": "./dist/fp-react.mjs",
+      "require": "./dist/fp-react.js"
     }
   },
   "keywords": [
@@ -35,7 +35,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:coverage:diff": "vitest run --coverage --reporter json --outputFile.json=report.json",
-    "test:dts": "tsc --noEmit --isolatedModules dist/fp-pro-react.d.ts",
+    "test:dts": "tsc --noEmit --isolatedModules dist/fp-react.d.ts",
     "docs": "typedoc src/index.ts --out docs"
   },
   "files": [
