@@ -85,7 +85,7 @@ export function useVisitorData(
           isLoading: false,
           isFetched: false,
           data: undefined,
-          error: error,
+          error,
         })
 
         throw error

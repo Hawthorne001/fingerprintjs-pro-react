@@ -9,7 +9,7 @@ import { usePromiseStore } from '../utils/use-promise-store'
 
 export interface FpProviderOptions extends StartOptions {
   /**
-   * If set to `true`, will force FpjsClient to be rebuilt with the new options. Should be used with caution
+   * If set to `true`, will force the agent to be rebuilt with the new options. Should be used with caution
    * since it can be triggered too often (e.g. on every render) and negatively affect performance of the JS agent.
    */
   forceRebuild?: boolean
@@ -111,7 +111,7 @@ function ProviderWithEnv({
 
   useEffect(() => {
     // By default, the client is always initialized once during the first render and won't be updated
-    // if the configuration changes. Use `forceRebuilt` flag to disable this behaviour.
+    // if the configuration changes. Use `forceRebuild` flag to disable this behaviour.
     if (!clientRef.current || forceRebuild) {
       clientRef.current = createClient()
     }
