@@ -29,7 +29,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Getting started](#getting-started)
-    - [1. Wrap your application (or component) in `<FpProvider>`.](#1-wrap-your-application-or-component-in-FpProvider)
+    - [1. Wrap your application (or component) in `<FpProvider>`.](#1-wrap-your-application-or-component-in-fpprovider)
     - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
   - [Linking and tagging information](#linking-and-tagging-information)
   - [Caching strategy](#caching-strategy)
