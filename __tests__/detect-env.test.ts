@@ -1,5 +1,6 @@
 import { detectEnvironment } from '../src/detect-env'
 import { Env } from '../src/env.types'
+import { describe, it, expect } from 'vitest'
 
 describe('Detect user env', () => {
   describe('Preact', () => {

@@ -1,12 +1,13 @@
 import { PropsWithChildren, useCallback, useEffect, useMemo, useRef } from 'react'
-import { FpContext } from '../fp-context'
+import { FingerprintContext } from '../fingerprint-context'
 import { Agent, GetOptions, start, StartOptions } from '@fingerprint/agent'
 import * as packageInfo from '../../package.json'
 import { isSSR } from '../ssr'
 import { WithEnvironment } from './with-environment'
 import type { EnvDetails } from '../env.types'
+import { usePromiseStore } from '../utils/use-promise-store'
 
-export interface FpProviderOptions extends StartOptions {
+export interface FingerprintProviderOptions extends StartOptions {
   /**
    * If set to `true`, will force the agent to be rebuilt with the new options. Should be used with caution
    * since it can be triggered too often (e.g. on every render) and negatively affect performance of the JS agent.
@@ -17,11 +18,11 @@ export interface FpProviderOptions extends StartOptions {
 /**
  * @example
  * ```jsx
- * <FpProvider
+ * <FingerprintProvider
  *   apiKey="<your-fpjs-public-api-key>"
  * >
  *   <MyApp />
- * </FpProvider>
+ * </FingerprintProvider>
  * ```
  *
  * Provides the FpContext to its child components.
@@ -30,7 +31,7 @@ export interface FpProviderOptions extends StartOptions {
  * This is just a wrapper around the actual provider.
  * For the implementation, see `ProviderWithEnv` component.
  */
-export function FpProvider(props: PropsWithChildren<FpProviderOptions>) {
+export function FingerprintProvider(props: PropsWithChildren<FingerprintProviderOptions>) {
   const propsWithEnv = props as PropsWithChildren<ProviderWithEnvProps>
 
   return (
@@ -40,7 +41,7 @@ export function FpProvider(props: PropsWithChildren<FpProviderOptions>) {
   )
 }
 
-interface ProviderWithEnvProps extends FpProviderOptions {
+interface ProviderWithEnvProps extends FingerprintProviderOptions {
   /**
    * Contains details about the env we're currently running in (e.g. framework, version)
    */
@@ -76,7 +77,7 @@ function ProviderWithEnv({
 
   const getClient = useCallback(() => {
     if (isSSR()) {
-      throw new Error('FpProvider client cannot be used in SSR')
+      throw new Error('FingerprintProvider client cannot be used in SSR')
     }
 
     if (!clientRef.current) {
@@ -86,16 +87,20 @@ function ProviderWithEnv({
     return clientRef.current
   }, [createClient])
 
+  const { doRequest } = usePromiseStore()
+
   const getVisitorData = useCallback(
     (options?: GetOptions) => {
       const client = getClient()
 
-      return client.get({
+      const mergedOptions = {
         ...getOptions,
         ...options,
-      })
+      }
+
+      return doRequest(async () => client.get(mergedOptions), mergedOptions)
     },
-    [getClient, getOptions]
+    [doRequest, getClient, getOptions]
   )
 
   const contextValue = useMemo(() => {
@@ -112,5 +117,5 @@ function ProviderWithEnv({
     }
   }, [forceRebuild, agentOptions, getOptions, createClient])
 
-  return <FpContext.Provider value={contextValue}>{children}</FpContext.Provider>
+  return <FingerprintContext.Provider value={contextValue}>{children}</FingerprintContext.Provider>
 }

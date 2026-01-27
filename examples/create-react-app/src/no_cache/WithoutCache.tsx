@@ -1,11 +1,11 @@
-import { FpProvider } from '@fingerprintjs/fingerprintjs-pro-react'
+import { FingerprintProvider } from '@fingerprint/react'
 import { Outlet } from 'react-router-dom'
 import { Nav } from '../shared/components/Nav'
 import { FPJS_API_KEY } from '../shared/utils/env'
 
 function WithoutCache() {
   return (
-    <FpProvider apiKey={FPJS_API_KEY}>
+    <FingerprintProvider apiKey={FPJS_API_KEY}>
       <div className='App'>
         <header className='header'>
           <h2>Solution without cache</h2>
@@ -14,7 +14,7 @@ function WithoutCache() {
         <Nav />
         <Outlet />
       </div>
-    </FpProvider>
+    </FingerprintProvider>
   )
 }
 

@@ -10,8 +10,8 @@
 <p align="center">
   <a href="https://github.com/fingerprintjs/fingerprintjs-pro-react/actions/workflows/release.yml"><img src="https://github.com/fingerprintjs/fingerprintjs-pro-react/actions/workflows/release.yml/badge.svg" alt="CI badge" /></a>
   <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/coverage/"><img src="https://fingerprintjs.github.io/fingerprintjs-pro-react/coverage/badges.svg" alt="coverage"></a>
-  <a href="https://www.npmjs.com/package/@fingerprintjs/fingerprintjs-pro-react"><img src="https://img.shields.io/npm/v/@fingerprintjs/fingerprintjs-pro-react.svg" alt="Current NPM version"></a>
-  <a href="https://www.npmjs.com/package/@fingerprintjs/fingerprintjs-pro-react"><img src="https://img.shields.io/npm/dm/@fingerprintjs/fingerprintjs-pro-react.svg" alt="Monthly downloads from NPM"></a>
+  <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/v/@fingerprint/react.svg" alt="Current NPM version"></a>
+  <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/dm/@fingerprint/react.svg" alt="Monthly downloads from NPM"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/:license-mit-blue.svg" alt="MIT license"></a>
   <a href="https://discord.gg/39EpE2neBg"><img src="https://img.shields.io/discord/852099967190433792?style=logo&label=Discord&logo=Discord&logoColor=white" alt="Discord server"></a>
   <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Discord server"></a>
@@ -29,7 +29,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Getting started](#getting-started)
-    - [1. Wrap your application (or component) in `<FpjsProvider>`.](#1-wrap-your-application-or-component-in-fpjsprovider)
+    - [1. Wrap your application (or component) in `<FingerprintProvider>`.](#1-wrap-your-application-or-component-in-FingerprintProvider)
     - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
   - [Linking and tagging information](#linking-and-tagging-information)
   - [Caching strategy](#caching-strategy)
@@ -46,59 +46,59 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
 - For Typescript users: Typescript 4.8 or higher
 
 > [!NOTE]
-> This package assumes you have a Fingerprint Pro subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint Pro and FingerprintJS](https://dev.fingerprint.com/docs/identification-vs-fingerprintjs).
+> This package assumes you have a Fingerprint Pro subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint Pro and FingerprintJS](https://docs.fingerprint.com/docs/identification-vs-fingerprintjs).
 
 ## Installation
 
 Using [npm](https://npmjs.org):
 
 ```sh
-npm install @fingerprintjs/fingerprintjs-pro-react
+npm install @fingerprint/react
 ```
 
 Using [yarn](https://yarnpkg.com):
 
 ```sh
-yarn add @fingerprintjs/fingerprintjs-pro-react
+yarn add @fingerprint/react
 ```
 
 Using [pnpm](https://pnpm.js.org):
 
 ```sh
-pnpm add @fingerprintjs/fingerprintjs-pro-react
+pnpm add @fingerprint/react
 ```
 
 ## Getting started
 
 In order to identify visitors, you'll need a Fingerprint Pro account (you can [sign up for free](https://dashboard.fingerprint.com/signup/)).
-To get your API key and get started, see the [Fingerprint Pro Quick Start Guide](https://dev.fingerprint.com/docs/quick-start-guide).
+To get your API key and get started, see the [Fingerprint Pro Quick Start Guide](https://docs.fingerprint.com/docs/quick-start-guide).
 
-### 1. Wrap your application (or component) in `<FpjsProvider>`.
+### 1. Wrap your application (or component) in `<FingerprintProvider>`.
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
-- Set `region` if you have chosen a non-global [region](https://dev.fingerprint.com/docs/regions) during registration.
-- Set `endpoint` and `scriptUrlPattern` if you are using [one of our proxy integrations to increase accuracy](https://dev.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
-- You can use all the [load options](https://dev.fingerprint.com/reference/load-function#load-options) available in the JavaScript agent `load` function.
+- Set `region` if you have chosen a non-global [region](https://docs.fingerprint.com/docs/regions) during registration.
+- Set `endpoint` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
+- You can use all the [start options](https://docs.fingerprint.com/reference/js-agent-v4-start-function#start-options) available in the JavaScript agent `load` function.
 
 ```jsx
 // src/index.js
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
-  FpProvider,
+  FingerprintProvider,
   FingerprintJSPro,
-} from '@fingerprintjs/fingerprintjs-pro-react'
+} from '@fingerprint/react'
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('app'))
 
-// <FpProvider /> supports the same options as `start()` function.
+// <FingerprintProvider /> supports the same options as `start()` function.
 root.render(
-  <FpProvider
+  <FingerprintProvider
     apiKey='your-public-api-key'
   >
     <App />
-  </FpProvider>
+  </FingerprintProvider>
 )
 ```
 
@@ -107,7 +107,7 @@ root.render(
 ```jsx
 // src/App.js
 import React from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function App() {
   const { isLoading, error, isFetched, data } = useVisitorData()
@@ -133,12 +133,12 @@ The `useVisitorData` hook also returns a `getData` method you can use to make an
 
 - You can pass `{ immediate: false }` to `useVisitorData` to disable automatic visitor identification on render.
 
-Both `useVisitorData` and `getData` accept all the [get options](https://dev.fingerprint.com/reference/get-function#get-options) available in the JavaScript agent `get` function.
+Both `useVisitorData` and `getData` accept all the [get options](https://docs.fingerprint.com/reference/get-function#get-options) available in the JavaScript agent `get` function.
 
 ```jsx
 // src/App.js
 import React, { useState } from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function App() {
   const { isLoading, error, getData } = useVisitorData(
@@ -189,7 +189,7 @@ export default App
 
 ## Linking and tagging information
 
-The `visitorId` provided by Fingerprint Identification is especially useful when combined with information you already know about your users, for example, account IDs, order IDs, etc. To learn more about various applications of the `linkedId` and `tag`, see [Linking and tagging information](https://dev.fingerprint.com/docs/tagging-information).
+The `visitorId` provided by Fingerprint Identification is especially useful when combined with information you already know about your users, for example, account IDs, order IDs, etc. To learn more about various applications of the `linkedId` and `tag`, see [Linking and tagging information](https://docs.fingerprint.com/docs/tagging-information).
 
 Associate the visitor ID with your data using the `linkedId` or `tag` parameter of the options object passed into the `useVisitorData()` hook or the `getData` function:
 
@@ -209,7 +209,7 @@ function App() {
 
 ## Error handling
 
-The `getData` function throws errors directly from the JS Agent without changing them. See [JS Agent error handling](https://dev.fingerprint.com/reference/error-handling) for more details.
+The `getData` function throws errors directly from the JS Agent without changing them. See [JS Agent error handling](https://docs.fingerprint.com/reference/js-agent-v4-error-handling) for more details.
 
 ## API Reference
 

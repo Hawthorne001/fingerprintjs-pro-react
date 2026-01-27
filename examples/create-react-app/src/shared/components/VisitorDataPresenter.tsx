@@ -1,4 +1,4 @@
-import { GetResult } from '@fingerprintjs/fingerprintjs-pro-react'
+import { GetResult } from '@fingerprint/react'
 
 function VisitorDataPresenter({ data, isLoading, error }: { data?: GetResult; isLoading?: boolean; error?: Error }) {
   if (error) {

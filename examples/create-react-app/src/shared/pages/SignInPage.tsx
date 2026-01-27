@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 import VisitorDataPresenter from '../components/VisitorDataPresenter'
 
 function SignInPage() {

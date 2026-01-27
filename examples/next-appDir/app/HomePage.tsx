@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '../styles/Home.module.css'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 import { useState } from 'react'
 
 const HomePage = () => {
