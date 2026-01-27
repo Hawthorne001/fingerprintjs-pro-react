@@ -11,7 +11,7 @@ describe('WithEnvironment', () => {
     })
 
     afterEach(() => {
-      vi.resetAllMocks()
+      vi.resetModules()
     })
     it('should detect env as "preact"', async () => {
       const { WithEnvironment } = await import('../src/components/with-environment')
