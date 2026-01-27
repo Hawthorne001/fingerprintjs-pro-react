@@ -29,7 +29,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Getting started](#getting-started)
-    - [1. Wrap your application (or component) in `<FpjsProvider>`.](#1-wrap-your-application-or-component-in-fpjsprovider)
+    - [1. Wrap your application (or component) in `<FpProvider>`.](#1-wrap-your-application-or-component-in-FpProvider)
     - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
   - [Linking and tagging information](#linking-and-tagging-information)
   - [Caching strategy](#caching-strategy)
@@ -73,7 +73,7 @@ pnpm add @fingerprintjs/fingerprintjs-pro-react
 In order to identify visitors, you'll need a Fingerprint Pro account (you can [sign up for free](https://dashboard.fingerprint.com/signup/)).
 To get your API key and get started, see the [Fingerprint Pro Quick Start Guide](https://dev.fingerprint.com/docs/quick-start-guide).
 
-### 1. Wrap your application (or component) in `<FpjsProvider>`.
+### 1. Wrap your application (or component) in `<FpProvider>`.
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
 - Set `region` if you have chosen a non-global [region](https://dev.fingerprint.com/docs/regions) during registration.

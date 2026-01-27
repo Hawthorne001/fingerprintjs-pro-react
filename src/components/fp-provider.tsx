@@ -18,11 +18,11 @@ export interface FpProviderOptions extends StartOptions {
 /**
  * @example
  * ```jsx
- * <FpjsProvider
+ * <FpProvider
  *   apiKey="<your-fpjs-public-api-key>"
  * >
  *   <MyApp />
- * </FpjsProvider>
+ * </FpProvider>
  * ```
  *
  * Provides the FpContext to its child components.
