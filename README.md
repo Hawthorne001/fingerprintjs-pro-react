@@ -77,7 +77,7 @@ To get your API key and get started, see the [Fingerprint Pro Quick Start Guide]
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
 - Set `region` if you have chosen a non-global [region](https://docs.fingerprint.com/docs/regions) during registration.
-- Set `endpoint`` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
+- Set `endpoint` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
 - You can use all the [start options](https://docs.fingerprint.com/reference/js-agent-v4-start-function#start-options) available in the JavaScript agent `load` function.
 
 ```jsx
