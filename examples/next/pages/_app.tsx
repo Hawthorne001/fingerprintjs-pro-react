@@ -1,14 +1,14 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { FpProvider } from '@fingerprint/react'
+import { FingerprintProvider } from '@fingerprint/react'
 
 const fpjsPublicApiKey = process.env.NEXT_PUBLIC_FPJS_PUBLIC_API_KEY as string
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <FpProvider apiKey={fpjsPublicApiKey}>
+    <FingerprintProvider apiKey={fpjsPublicApiKey}>
       <Component {...pageProps} />
-    </FpProvider>
+    </FingerprintProvider>
   )
 }
 

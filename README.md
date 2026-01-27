@@ -29,7 +29,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Getting started](#getting-started)
-    - [1. Wrap your application (or component) in `<FpProvider>`.](#1-wrap-your-application-or-component-in-fpprovider)
+    - [1. Wrap your application (or component) in `<FingerprintProvider>`.](#1-wrap-your-application-or-component-in-FingerprintProvider)
     - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
   - [Linking and tagging information](#linking-and-tagging-information)
   - [Caching strategy](#caching-strategy)
@@ -73,7 +73,7 @@ pnpm add @fingerprint/react
 In order to identify visitors, you'll need a Fingerprint Pro account (you can [sign up for free](https://dashboard.fingerprint.com/signup/)).
 To get your API key and get started, see the [Fingerprint Pro Quick Start Guide](https://docs.fingerprint.com/docs/quick-start-guide).
 
-### 1. Wrap your application (or component) in `<FpProvider>`.
+### 1. Wrap your application (or component) in `<FingerprintProvider>`.
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
 - Set `region` if you have chosen a non-global [region](https://docs.fingerprint.com/docs/regions) during registration.
@@ -85,20 +85,20 @@ To get your API key and get started, see the [Fingerprint Pro Quick Start Guide]
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
-  FpProvider,
+  FingerprintProvider,
   FingerprintJSPro,
 } from '@fingerprint/react'
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('app'))
 
-// <FpProvider /> supports the same options as `start()` function.
+// <FingerprintProvider /> supports the same options as `start()` function.
 root.render(
-  <FpProvider
+  <FingerprintProvider
     apiKey='your-public-api-key'
   >
     <App />
-  </FpProvider>
+  </FingerprintProvider>
 )
 ```
 

@@ -13,7 +13,7 @@ export default defineConfig({
     sourcemap: true,
     lib: {
       entry: 'src/index.ts',
-      fileName: 'fp-react',
+      fileName: 'fingerprint-react',
       formats: ['cjs', 'es'],
     },
     rollupOptions: {

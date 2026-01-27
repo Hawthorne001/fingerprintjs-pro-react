@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react'
-import { FpProvider, FpProviderOptions } from '../src'
+import { FingerprintProvider, FingerprintProviderOptions } from '../src'
 import { act } from '@testing-library/react'
 
 export const getDefaultLoadOptions = () => ({
@@ -7,11 +7,11 @@ export const getDefaultLoadOptions = () => ({
 })
 
 export const createWrapper =
-  (providerProps: Partial<FpProviderOptions> = {}) =>
+  (providerProps: Partial<FingerprintProviderOptions> = {}) =>
   ({ children }: PropsWithChildren<{}>) => (
-    <FpProvider {...getDefaultLoadOptions()} {...providerProps}>
+    <FingerprintProvider {...getDefaultLoadOptions()} {...providerProps}>
       {children}
-    </FpProvider>
+    </FingerprintProvider>
   )
 
 export const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))

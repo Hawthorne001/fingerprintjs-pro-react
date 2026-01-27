@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { renderHook } from '@testing-library/react'
-import { FpContext } from '../src'
+import { FingerprintContext } from '../src'
 import { createWrapper, getDefaultLoadOptions } from './helpers'
 import { version } from '../package.json'
 import { describe, it, expect, vi } from 'vitest'
@@ -10,7 +10,7 @@ vi.mock('@fingerprint/agent', { spy: true })
 
 const mockStart = vi.mocked(agent.start)
 
-describe('FpProvider', () => {
+describe('FingerprintProvider', () => {
   it('should configure an instance of the Fp Agent', async () => {
     const loadOptions = getDefaultLoadOptions()
     const wrapper = createWrapper({
@@ -20,7 +20,7 @@ describe('FpProvider', () => {
         duration: 100,
       },
     })
-    renderHook(() => useContext(FpContext), {
+    renderHook(() => useContext(FingerprintContext), {
       wrapper,
     })
     expect(mockStart).toHaveBeenCalledWith({

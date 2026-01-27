@@ -5,7 +5,7 @@ import { QueryResult } from './query'
 export type VisitorQueryResult = QueryResult<GetResult>
 
 const stub = (): never => {
-  throw new Error('You forgot to wrap your component in <FpProvider>.')
+  throw new Error('You forgot to wrap your component in <FingerprintProvider>.')
 }
 
 const initialContext = {
@@ -15,8 +15,8 @@ const initialContext = {
 /**
  * The Fingerprint Context
  */
-export interface FpContextInterface {
+export interface FingerprintContextInterface {
   getVisitorData: (config?: GetOptions) => Promise<GetResult>
 }
 
-export const FpContext = createContext<FpContextInterface>(initialContext)
+export const FingerprintContext = createContext<FingerprintContextInterface>(initialContext)

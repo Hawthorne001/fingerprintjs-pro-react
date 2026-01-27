@@ -1,4 +1,4 @@
-import { FpContext, FpContextInterface, VisitorQueryResult } from './fp-context'
+import { FingerprintContext, FingerprintContextInterface, VisitorQueryResult } from './fingerprint-context'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import deepEquals from 'fast-deep-equal'
 import { toError } from './utils/to-error'
@@ -35,14 +35,14 @@ export type UseVisitorDataReturn = VisitorQueryResult & {
  * ```
  * Use the `useVisitorData` hook in your components to perform identification requests with the Fingerprint API. The returned object contains information about loading status, errors, and visitor.
  *
- * @param {UseVisitorDataOptions} options for the `fp.get()` request and for hook
+ * @param {UseVisitorDataOptions} options for the `agent.get()` request and for hook
  */
 export function useVisitorData(
   { immediate, ...getOptions }: UseVisitorDataOptions = { immediate: true }
 ): UseVisitorDataReturn {
   assertIsTruthy(getOptions, 'getOptions')
 
-  const { getVisitorData } = useContext<FpContextInterface>(FpContext)
+  const { getVisitorData } = useContext<FingerprintContextInterface>(FingerprintContext)
 
   const [currentGetOptions, setCurrentGetOptions] = useState(getOptions)
   const [queryState, setQueryState] = useState<VisitorQueryResult>({
