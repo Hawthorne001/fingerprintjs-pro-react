@@ -1,6 +1,6 @@
 import { useVisitorData, UseVisitorDataReturn } from '../src'
 import { render, renderHook } from '@testing-library/react'
-import { actWait, createWrapper } from './helpers'
+import { actWait, createWrapper, wait } from './helpers'
 import { act } from 'react-dom/test-utils'
 import { useEffect, useState } from 'react'
 import userEvent from '@testing-library/user-event'
@@ -63,6 +63,35 @@ describe('useVisitorData', () => {
 
     expect(mockStart).toHaveBeenCalled()
     expect(mockGet).toHaveBeenCalled()
+    expect(result.current).toMatchObject(
+      expect.objectContaining({
+        isLoading: false,
+        data: mockGetResult,
+      })
+    )
+  })
+
+  it('should avoid duplicate requests if one is already pending', async () => {
+    mockGet.mockImplementation(async () => {
+      await wait(250)
+      return mockGetResult
+    })
+
+    const wrapper = createWrapper()
+    const { result } = renderHook(() => useVisitorData({ immediate: false }), { wrapper })
+    expect(result.current).toMatchObject(
+      expect.objectContaining({
+        isLoading: false,
+        data: undefined,
+      })
+    )
+
+    await Promise.all([result.current.getData(), result.current.getData()])
+
+    await actWait(500)
+
+    expect(mockStart).toHaveBeenCalled()
+    expect(mockGet).toHaveBeenCalledTimes(1)
     expect(result.current).toMatchObject(
       expect.objectContaining({
         isLoading: false,

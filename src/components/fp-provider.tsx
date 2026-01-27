@@ -5,6 +5,7 @@ import * as packageInfo from '../../package.json'
 import { isSSR } from '../ssr'
 import { WithEnvironment } from './with-environment'
 import type { EnvDetails } from '../env.types'
+import { usePromiseStore } from '../utils/use-promise-store'
 
 export interface FpProviderOptions extends StartOptions {
   /**
@@ -86,16 +87,20 @@ function ProviderWithEnv({
     return clientRef.current
   }, [createClient])
 
+  const { doRequest } = usePromiseStore()
+
   const getVisitorData = useCallback(
     (options?: GetOptions) => {
       const client = getClient()
 
-      return client.get({
+      const mergedOptions = {
         ...getOptions,
         ...options,
-      })
+      }
+
+      return doRequest(async () => client.get(mergedOptions), mergedOptions)
     },
-    [getClient, getOptions]
+    [doRequest, getClient, getOptions]
   )
 
   const contextValue = useMemo(() => {
