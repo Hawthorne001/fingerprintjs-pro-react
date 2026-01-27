@@ -123,7 +123,7 @@ importers:
 
   examples/create-react-app:
     dependencies:
-      '@fingerprintjs/fingerprintjs-pro-react':
+      '@fingerprint/react':
         specifier: workspace:*
         version: link:../..
       react:
@@ -144,7 +144,7 @@ importers:
 
   examples/next:
     dependencies:
-      '@fingerprintjs/fingerprintjs-pro-react':
+      '@fingerprint/react':
         specifier: workspace:*
         version: link:../..
       '@types/node':
@@ -171,7 +171,7 @@ importers:
 
   examples/next-appDir:
     dependencies:
-      '@fingerprintjs/fingerprintjs-pro-react':
+      '@fingerprint/react':
         specifier: workspace:*
         version: link:../..
       '@types/node':
@@ -198,7 +198,7 @@ importers:
 
   examples/preact:
     dependencies:
-      '@fingerprintjs/fingerprintjs-pro-react':
+      '@fingerprint/react':
         specifier: workspace:*
         version: link:../..
       '@typescript-eslint/eslint-plugin':
@@ -235,7 +235,7 @@ importers:
 
   examples/vite:
     dependencies:
-      '@fingerprintjs/fingerprintjs-pro-react':
+      '@fingerprint/react':
         specifier: workspace:*
         version: link:../..
       react:
@@ -284,7 +284,7 @@ importers:
 
   examples/webpack-based:
     dependencies:
-      '@fingerprintjs/fingerprintjs-pro-react':
+      '@fingerprint/react':
         specifier: workspace:*
         version: link:../..
       react:

@@ -1,4 +1,4 @@
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function App() {
   const { isLoading, error, data } = useVisitorData()

@@ -1,4 +1,4 @@
-import { FpProvider } from '@fingerprintjs/fingerprintjs-pro-react'
+import { FpProvider } from '@fingerprint/react'
 import { Outlet } from 'react-router-dom'
 import { FPJS_API_KEY } from '../shared/utils/env'
 import { Nav } from '../shared/components/Nav'

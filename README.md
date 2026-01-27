@@ -10,8 +10,8 @@
 <p align="center">
   <a href="https://github.com/fingerprintjs/fingerprintjs-pro-react/actions/workflows/release.yml"><img src="https://github.com/fingerprintjs/fingerprintjs-pro-react/actions/workflows/release.yml/badge.svg" alt="CI badge" /></a>
   <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/coverage/"><img src="https://fingerprintjs.github.io/fingerprintjs-pro-react/coverage/badges.svg" alt="coverage"></a>
-  <a href="https://www.npmjs.com/package/@fingerprintjs/fingerprintjs-pro-react"><img src="https://img.shields.io/npm/v/@fingerprintjs/fingerprintjs-pro-react.svg" alt="Current NPM version"></a>
-  <a href="https://www.npmjs.com/package/@fingerprintjs/fingerprintjs-pro-react"><img src="https://img.shields.io/npm/dm/@fingerprintjs/fingerprintjs-pro-react.svg" alt="Monthly downloads from NPM"></a>
+  <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/v/@fingerprint/react.svg" alt="Current NPM version"></a>
+  <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/dm/@fingerprint/react.svg" alt="Monthly downloads from NPM"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/:license-mit-blue.svg" alt="MIT license"></a>
   <a href="https://discord.gg/39EpE2neBg"><img src="https://img.shields.io/discord/852099967190433792?style=logo&label=Discord&logo=Discord&logoColor=white" alt="Discord server"></a>
   <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Discord server"></a>
@@ -53,19 +53,19 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
 Using [npm](https://npmjs.org):
 
 ```sh
-npm install @fingerprintjs/fingerprintjs-pro-react
+npm install @fingerprint/react
 ```
 
 Using [yarn](https://yarnpkg.com):
 
 ```sh
-yarn add @fingerprintjs/fingerprintjs-pro-react
+yarn add @fingerprint/react
 ```
 
 Using [pnpm](https://pnpm.js.org):
 
 ```sh
-pnpm add @fingerprintjs/fingerprintjs-pro-react
+pnpm add @fingerprint/react
 ```
 
 ## Getting started
@@ -87,7 +87,7 @@ import ReactDOM from 'react-dom/client'
 import {
   FpProvider,
   FingerprintJSPro,
-} from '@fingerprintjs/fingerprintjs-pro-react'
+} from '@fingerprint/react'
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('app'))
@@ -107,7 +107,7 @@ root.render(
 ```jsx
 // src/App.js
 import React from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function App() {
   const { isLoading, error, isFetched, data } = useVisitorData()
@@ -138,7 +138,7 @@ Both `useVisitorData` and `getData` accept all the [get options](https://docs.fi
 ```jsx
 // src/App.js
 import React, { useState } from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function App() {
   const { isLoading, error, getData } = useVisitorData(

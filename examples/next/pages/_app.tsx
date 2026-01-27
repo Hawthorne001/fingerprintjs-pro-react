@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { FpProvider } from '@fingerprintjs/fingerprintjs-pro-react'
+import { FpProvider } from '@fingerprint/react'
 
 const fpjsPublicApiKey = process.env.NEXT_PUBLIC_FPJS_PUBLIC_API_KEY as string
 

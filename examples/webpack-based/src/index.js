@@ -1,6 +1,6 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
-import { FpProvider } from '@fingerprintjs/fingerprintjs-pro-react'
+import { FpProvider } from '@fingerprint/react'
 import App from './App'
 
 const rootElement = document.getElementById('root')

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 const Home: NextPage = () => {
   const { isLoading, error, data } = useVisitorData({ immediate: true })

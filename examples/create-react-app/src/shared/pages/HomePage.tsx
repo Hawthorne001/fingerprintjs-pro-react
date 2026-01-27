@@ -1,7 +1,7 @@
 import Toggler from '../components/Toggler'
 import VisitorDataPresenter from '../components/VisitorDataPresenter'
 import { useCallback } from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function HomePage() {
   const clearCache = useCallback(() => {
