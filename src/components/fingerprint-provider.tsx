@@ -1,6 +1,6 @@
 import { PropsWithChildren, useCallback, useEffect, useMemo, useRef } from 'react'
 import { FingerprintContext } from '../fingerprint-context'
-import { Agent, GetOptions, start, StartOptions } from '@fingerprint/agent'
+import { Agent, GetOptions, start, StartOptions, default as Loader } from '@fingerprint/agent'
 import * as packageInfo from '../../package.json'
 import { isSSR } from '../ssr'
 import { WithEnvironment } from './with-environment'
@@ -49,6 +49,18 @@ interface ProviderWithEnvProps extends FingerprintProviderOptions {
   getOptions?: GetOptions
 }
 
+function isLoader(value: unknown): value is Pick<typeof Loader, 'start'> {
+  return typeof value === 'object' && value !== null && 'start' in value && typeof value.start === 'function'
+}
+
+function getCustomLoader(props: Record<string, unknown>) {
+  if ('customAgent' in props && isLoader(props.customAgent)) {
+    return props.customAgent
+  }
+
+  return undefined
+}
+
 function ProviderWithEnv({
   children,
   forceRebuild,
@@ -57,6 +69,8 @@ function ProviderWithEnv({
   ...agentOptions
 }: PropsWithChildren<ProviderWithEnvProps>) {
   const createClient = useCallback(() => {
+    const customLoader = getCustomLoader(agentOptions)
+
     let integrationInfo = `react-sdk/${packageInfo.version}`
 
     if (env) {
@@ -67,10 +81,12 @@ function ProviderWithEnv({
 
     const mergedIntegrationInfo = [...(agentOptions.integrationInfo || []), integrationInfo]
 
-    return start({
+    const startParams = {
       ...agentOptions,
       integrationInfo: mergedIntegrationInfo,
-    })
+    }
+
+    return customLoader ? customLoader.start(startParams) : start(startParams)
   }, [agentOptions, env])
 
   const clientRef = useRef<Agent>()
