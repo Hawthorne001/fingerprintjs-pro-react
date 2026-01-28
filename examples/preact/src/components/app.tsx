@@ -1,18 +1,11 @@
 import { FunctionalComponent } from 'preact'
 import { useVisitorData } from '@fingerprint/react'
-import { useState } from 'preact/hooks'
-import { JSX } from 'preact/compat'
 
 const App: FunctionalComponent = () => {
-  const [extendedResult, updateExtendedResult] = useState(false)
   const { isLoading, error, data, getData } = useVisitorData({ immediate: true })
 
   const reloadData = (): void => {
     getData()
-  }
-
-  const onChangeExtendedResult = (e: JSX.TargetedEvent<HTMLInputElement, Event>): void => {
-    updateExtendedResult((e.target as HTMLInputElement).checked)
   }
 
   return (
@@ -32,10 +25,6 @@ const App: FunctionalComponent = () => {
           <button onClick={reloadData} type='button'>
             Reload data
           </button>
-          <label>
-            <input type='checkbox' onInput={onChangeExtendedResult} checked={extendedResult} />
-            Extended result
-          </label>
         </div>
         <h4>
           VisitorId: <span className='visitorId'>{isLoading ? 'Loading...' : data?.visitor_id}</span>
