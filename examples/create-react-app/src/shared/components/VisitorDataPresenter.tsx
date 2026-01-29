@@ -1,6 +1,14 @@
-import { GetResult } from '@fingerprint/react'
+import { Fingerprint } from '@fingerprint/react'
 
-function VisitorDataPresenter({ data, isLoading, error }: { data?: GetResult; isLoading?: boolean; error?: Error }) {
+function VisitorDataPresenter({
+  data,
+  isLoading,
+  error,
+}: {
+  data?: Fingerprint.GetResult
+  isLoading?: boolean
+  error?: Error
+}) {
   if (error) {
     return <p>An error occurred: {error.message}</p>
   }
