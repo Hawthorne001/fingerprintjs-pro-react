@@ -16,7 +16,7 @@ There are 4 demo pages for this integration:
 4. In `/examples/preact` folder. It is a demo built with Preact. You can find more info about configuration and starting demo in the [readme](examples/preact/README.md).
 5. In `/examples/webpack-based` folder. It is a simple demo built with raw webpack.
 
-❗ Build projects before testing integration. First build `fingerprintjs-pro-react`, and then start any of the example apps.
+❗ Build projects before testing integration. First build the `@fingerprint/react` package, and then start any of the example apps.
 
 ### How to build
 
