@@ -1,4 +1,4 @@
-# Contributing to FingerprintJS Pro React integration
+# Contributing to Fingerprint React integration
 
 ## Working with code
 
@@ -16,9 +16,7 @@ There are 4 demo pages for this integration:
 4. In `/examples/preact` folder. It is a demo built with Preact. You can find more info about configuration and starting demo in the [readme](examples/preact/README.md).
 5. In `/examples/webpack-based` folder. It is a simple demo built with raw webpack.
 
-If you want to test integration with [fingerprintjs-pro-spa](https://github.com/fingerprintjs/fingerprintjs-pro-spa), just [link the package](https://pnpm.io/cli/link#replace-an-installed-package-with-a-local-version-of-it) with the `pnpm link <spa-directory>`.
-
-❗ Build projects before testing integration. First build `fingerprintjs-pro-spa`, then `fingerprintjs-pro-react`, and then start spa example app.
+❗ Build projects before testing integration. First build the `@fingerprint/react` package, and then start any of the example apps.
 
 ### How to build
 
@@ -44,7 +42,7 @@ pnpm lint:fix
 
 ### How to test
 
-Tests are located in `__tests__` folder and run by [jest](https://jestjs.io/) in [jsdom](https://github.com/jsdom/jsdom) environment.
+Tests are located in `__tests__` folder and run by [vitest](https://vitest.dev/) in [jsdom](https://github.com/jsdom/jsdom) environment.
 
 To run tests you can use IDE instruments or just run:
 

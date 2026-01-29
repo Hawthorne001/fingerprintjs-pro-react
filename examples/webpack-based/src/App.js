@@ -1,5 +1,4 @@
-import React from 'react'
-import { useVisitorData } from '@fingerprintjs/fingerprintjs-pro-react'
+import { useVisitorData } from '@fingerprint/react'
 
 function App() {
   const { isLoading, error, data } = useVisitorData()
@@ -12,8 +11,7 @@ function App() {
   }
 
   if (data) {
-    // perform some logic based on the visitor data
-    return <div>Welcome {data.visitorFound ? `back ${data.visitorId}` : ''}!</div>
+    return <div>Welcome {data.visitor_id}!</div>
   }
   return null
 }

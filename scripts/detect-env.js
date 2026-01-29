@@ -32,7 +32,7 @@ function writeDetectedEnv(env, version) {
     const fullDistPath = path.resolve(__dirname, '../', distPath)
 
     const contents = fs.readFileSync(fullDistPath).toString()
-    const newContents = contents.replace(token, JSON.stringify({ name: env, version }))
+    const newContents = contents.replace(token, JSON.stringify({ name: env, version }).replace(/"/g, '\\"'))
 
     fs.writeFileSync(fullDistPath, newContents)
   })

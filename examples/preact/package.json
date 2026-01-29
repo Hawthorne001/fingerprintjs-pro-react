@@ -10,7 +10,7 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
-    "@fingerprintjs/fingerprintjs-pro-react": "workspace:*",
+    "@fingerprint/react": "workspace:*",
     "preact": "10.19.6",
     "preact-render-to-string": "^6.4.0"
   },

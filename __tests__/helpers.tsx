@@ -1,18 +1,17 @@
 import { PropsWithChildren } from 'react'
-import { FpjsClientOptions } from '@fingerprintjs/fingerprintjs-pro-spa'
-import { FpjsProvider } from '../src'
-import { act } from 'react-dom/test-utils'
+import { FingerprintProvider, FingerprintProviderOptions } from '../src'
+import { act } from '@testing-library/react'
 
 export const getDefaultLoadOptions = () => ({
   apiKey: 'test_api_key',
 })
 
 export const createWrapper =
-  ({ loadOptions = getDefaultLoadOptions(), ...options }: Partial<FpjsClientOptions> = {}) =>
-  ({ children }: PropsWithChildren<{}>): JSX.Element => (
-    <FpjsProvider loadOptions={loadOptions} {...options}>
+  (providerProps: Partial<FingerprintProviderOptions> = {}) =>
+  ({ children }: PropsWithChildren<{}>) => (
+    <FingerprintProvider {...getDefaultLoadOptions()} {...providerProps}>
       {children}
-    </FpjsProvider>
+    </FingerprintProvider>
   )
 
 export const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))

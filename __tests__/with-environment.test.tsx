@@ -4,10 +4,11 @@ import { WithEnvironment } from '../src/components/with-environment'
 import { Link, MemoryRouter, Route, Routes } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
 import { actWait } from './helpers'
+import { describe, it, expect, vi } from 'vitest'
 
 describe('WithEnvironment', () => {
   it('enhances provided element with `env` prop', () => {
-    const Mock = jest.fn(() => <div>foo</div>) as FunctionComponent
+    const Mock = vi.fn(() => <div>foo</div>) as FunctionComponent
 
     render(
       <WithEnvironment>

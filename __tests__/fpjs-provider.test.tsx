@@ -1,42 +1,36 @@
 import { useContext } from 'react'
 import { renderHook } from '@testing-library/react'
-import { FpjsContext } from '../src'
+import { FingerprintContext } from '../src'
 import { createWrapper, getDefaultLoadOptions } from './helpers'
-import { CacheLocation, FpjsClient, FpjsClientOptions } from '@fingerprintjs/fingerprintjs-pro-spa'
-import * as packageInfo from '../package.json'
+import { version } from '../package.json'
+import { describe, it, expect, vi } from 'vitest'
+import * as agent from '@fingerprint/agent'
 
-jest.mock('@fingerprintjs/fingerprintjs-pro-spa', () => {
-  return {
-    ...jest.requireActual<any>('@fingerprintjs/fingerprintjs-pro-spa'),
-    FpjsClient: jest.fn(() => ({
-      init: jest.fn(),
-    })),
-  }
-})
+vi.mock('@fingerprint/agent', { spy: true })
 
-describe(`FpjsProvider`, () => {
-  it('should configure an instance of the FpjsClient', async () => {
+const mockStart = vi.mocked(agent.start)
+
+describe('FingerprintProvider', () => {
+  it('should configure an instance of the Fp Agent', async () => {
     const loadOptions = getDefaultLoadOptions()
-    const options: FpjsClientOptions = {
-      loadOptions,
-      cacheLocation: CacheLocation.LocalStorage,
-      cachePrefix: 'TEST_PREFIX',
-      cacheTimeInSeconds: 60 * 15,
-    }
-    const wrapper = createWrapper(options)
-    renderHook(() => useContext(FpjsContext), {
+    const wrapper = createWrapper({
+      cache: {
+        cachePrefix: 'cache',
+        storage: 'sessionStorage',
+        duration: 100,
+      },
+    })
+    renderHook(() => useContext(FingerprintContext), {
       wrapper,
     })
-    expect(FpjsClient).toHaveBeenCalledWith(
-      expect.objectContaining({
-        loadOptions: expect.objectContaining({
-          ...loadOptions,
-          integrationInfo: [`react-sdk/${packageInfo.version}/react`],
-        }),
-        cacheLocation: CacheLocation.LocalStorage,
-        cachePrefix: 'TEST_PREFIX',
-        cacheTimeInSeconds: 60 * 15,
-      })
-    )
+    expect(mockStart).toHaveBeenCalledWith({
+      ...loadOptions,
+      integrationInfo: [`react-sdk/${version}/react`],
+      cache: {
+        cachePrefix: 'cache',
+        storage: 'sessionStorage',
+        duration: 100,
+      },
+    })
   })
 })
