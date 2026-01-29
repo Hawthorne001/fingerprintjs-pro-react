@@ -1,12 +1,13 @@
 {
   "name": "@fingerprint/react",
-  "version": "3.0.0",
+  "version": "3.0.0-test.2",
   "description": "FingerprintJS Pro React SDK",
   "main": "dist/fingerprint-react.js",
   "module": "dist/fingerprint-react.mjs",
   "types": "dist/fingerprint-react.d.ts",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "exports": {
     ".": {
