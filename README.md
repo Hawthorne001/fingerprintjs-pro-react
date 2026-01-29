@@ -8,18 +8,18 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/fingerprintjs/fingerprintjs-pro-react/actions/workflows/release.yml"><img src="https://github.com/fingerprintjs/fingerprintjs-pro-react/actions/workflows/release.yml/badge.svg" alt="CI badge" /></a>
-  <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/coverage/"><img src="https://fingerprintjs.github.io/fingerprintjs-pro-react/coverage/badges.svg" alt="coverage"></a>
+  <a href="https://github.com/fingerprintjs/react/actions/workflows/release.yml"><img src="https://github.com/fingerprintjs/react/actions/workflows/release.yml/badge.svg" alt="CI badge" /></a>
+  <a href="https://fingerprintjs.github.io/react/coverage/"><img src="https://fingerprintjs.github.io/react/coverage/badges.svg" alt="coverage"></a>
   <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/v/@fingerprint/react.svg" alt="Current NPM version"></a>
   <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/dm/@fingerprint/react.svg" alt="Monthly downloads from NPM"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/:license-mit-blue.svg" alt="MIT license"></a>
   <a href="https://discord.gg/39EpE2neBg"><img src="https://img.shields.io/discord/852099967190433792?style=logo&label=Discord&logo=Discord&logoColor=white" alt="Discord server"></a>
-  <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Discord server"></a>
+  <a href="https://fingerprintjs.github.io/react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Discord server"></a>
 </p>
 
 # Fingerprint React
 
-Fingerprint is a device intelligence platform offering industry-leading accuracy. Fingerprint Pro React SDK is an easy way to integrate **[Fingerprint Pro](https://fingerprint.com/)** into your React application. It's also compatible with Next.js and Preact. See application demos in the [examples](https://github.com/fingerprintjs/fingerprintjs-pro-react/tree/main/examples) folder.
+Fingerprint is a device intelligence platform offering industry-leading accuracy. Fingerprint Pro React SDK is an easy way to integrate **[Fingerprint Pro](https://fingerprint.com/)** into your React application. It's also compatible with Next.js and Preact. See application demos in the [examples](https://github.com/fingerprintjs/react/tree/main/examples) folder.
 
 ## Table of contents
 
@@ -213,12 +213,12 @@ The `getData` function throws errors directly from the JS Agent without changing
 
 ## API Reference
 
-See the full [generated API reference](https://fingerprintjs.github.io/fingerprintjs-pro-react/).
+See the full [generated API reference](https://fingerprintjs.github.io/react/).
 
 ## Support and feedback
 
-To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/fingerprintjs-pro-react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [source-availalbe FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
+To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [source-availalbe FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
 
 ## License
 
-This project is licensed under the MIT license. See the [LICENSE](https://github.com/fingerprintjs/fingerprintjs-pro-react/blob/main/LICENSE) file for more info.
+This project is licensed under the MIT license. See the [LICENSE](https://github.com/fingerprintjs/react/blob/main/LICENSE) file for more info.
