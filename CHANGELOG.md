@@ -1,3 +1,22 @@
+## [3.0.0](https://github.com/fingerprintjs/react/compare/v2.7.1...v3.0.0) (2026-01-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* The SDK api has changed to match changes introduced in V4 version of the agent.
+
+### Features
+
+* add usePromiseStore to prevent duplicate async requests ([fb59d7f](https://github.com/fingerprintjs/react/commit/fb59d7fafc7890e29678e2dae53a9f8c549f0acf))
+* bump @fingerprint/agent to 4.0.0-beta.5 ([c5d217d](https://github.com/fingerprintjs/react/commit/c5d217d36c08fddcf955e2f4b198ff5e37320f4f))
+* migrate to v4 version of the agent ([36a26ba](https://github.com/fingerprintjs/react/commit/36a26ba6a2c035e1b3b8dc52b8371a3ed1883b7b))
+* rename package to `@fingerprint/react` ([4714fdf](https://github.com/fingerprintjs/react/commit/4714fdf8526e1b62ab3ad4d84404672c02440da3))
+
+
+### Build System
+
+* **deps:** use stable 4.0.0 version of the @fingerprint/agent ([76a2fec](https://github.com/fingerprintjs/react/commit/76a2fec8341cefdcfd323ca69ca80780d68a5c89))
+
 ## [2.7.1](https://github.com/fingerprintjs/fingerprintjs-pro-react/compare/v2.7.0...v2.7.1) (2025-09-15)
 
 
