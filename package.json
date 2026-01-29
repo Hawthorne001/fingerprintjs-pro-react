@@ -47,14 +47,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fingerprintjs/fingerprintjs-pro-react.git"
+    "url": "git+https://github.com/fingerprintjs/react.git"
   },
   "author": "FingerprintJS, Inc (https://fingerprint.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fingerprintjs/fingerprintjs-pro-react/issues"
+    "url": "https://github.com/fingerprintjs/react/issues"
   },
-  "homepage": "https://github.com/fingerprintjs/fingerprintjs-pro-react#readme",
+  "homepage": "https://github.com/fingerprintjs/react#readme",
   "dependencies": {
     "@fingerprint/agent": "^4.0.0",
     "fast-deep-equal": "3.1.3"
