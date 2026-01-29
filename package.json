@@ -6,7 +6,8 @@
   "module": "dist/fingerprint-react.mjs",
   "types": "dist/fingerprint-react.d.ts",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "exports": {
     ".": {
