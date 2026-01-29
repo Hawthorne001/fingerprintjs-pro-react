@@ -1,4 +1,4 @@
-# Contributing to FingerprintJS Pro React integration
+# Contributing to Fingerprint React integration
 
 ## Working with code
 
