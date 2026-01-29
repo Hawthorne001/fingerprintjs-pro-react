@@ -17,7 +17,7 @@
   <a href="https://fingerprintjs.github.io/fingerprintjs-pro-react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Discord server"></a>
 </p>
 
-# Fingerprint Pro React
+# Fingerprint React
 
 Fingerprint is a device intelligence platform offering industry-leading accuracy. Fingerprint Pro React SDK is an easy way to integrate **[Fingerprint Pro](https://fingerprint.com/)** into your React application. It's also compatible with Next.js and Preact. See application demos in the [examples](https://github.com/fingerprintjs/fingerprintjs-pro-react/tree/main/examples) folder.
 
