@@ -46,7 +46,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
 - For Typescript users: Typescript 4.8 or higher
 
 > [!NOTE]
-> This package assumes you have a Fingerprint Pro subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint Pro and FingerprintJS](https://docs.fingerprint.com/docs/identification-vs-fingerprintjs).
+> This package assumes you have a Fingerprint subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint and FingerprintJS](https://docs.fingerprint.com/docs/identification-vs-fingerprintjs).
 
 ## Installation
 
@@ -70,8 +70,8 @@ pnpm add @fingerprint/react
 
 ## Getting started
 
-In order to identify visitors, you'll need a Fingerprint Pro account (you can [sign up for free](https://dashboard.fingerprint.com/signup/)).
-To get your API key and get started, see the [Fingerprint Pro Quick Start Guide](https://docs.fingerprint.com/docs/quick-start-guide).
+In order to identify visitors, you'll need a Fingerprint account (you can [sign up for free](https://dashboard.fingerprint.com/signup/)).
+To get your API key and get started, see the [Fingerprint Quick Start Guide](https://docs.fingerprint.com/docs/quick-start-guide).
 
 ### 1. Wrap your application (or component) in `<FingerprintProvider>`.
 
