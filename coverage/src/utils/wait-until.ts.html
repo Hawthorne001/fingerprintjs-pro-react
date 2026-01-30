@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/15</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">60% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/5</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>0/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -92,19 +92,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -115,19 +115,19 @@
   intervalMs?: number
 }
 &nbsp;
-export function waitUntil({ checkCondition, intervalMs = 250<span class="branch-1 cbranch-no" title="branch not covered" >, t</span>imeoutMs = 2000<span class="branch-1 cbranch-no" title="branch not covered" > }: WaitUntilParams)</span> {
-  return new Promise&lt;void&gt;((resolve, reject) =&gt; {
-    const timeoutId = setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span>
+export function <span class="fstat-no" title="function not covered" >waitUntil({</span> checkCondition, intervalMs = <span class="branch-0 cbranch-no" title="branch not covered" >250, t</span>imeoutMs = <span class="branch-0 cbranch-no" title="branch not covered" >2000 }</span>: WaitUntilParams) {
+<span class="cstat-no" title="statement not covered" >  return new Promise&lt;void&gt;(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+    const timeoutId = <span class="cstat-no" title="statement not covered" >setTimeout(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
 <span class="cstat-no" title="statement not covered" >      clearInterval(interval)</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >      reject(new Error('Timeout'))</span>
     }, timeoutMs)
 &nbsp;
-    const interval = setInterval(() =&gt; {
-      if (checkCondition()) {
-        clearTimeout(timeoutId)
-        clearInterval(interval)
-        resolve()
+    const interval = <span class="cstat-no" title="statement not covered" >setInterval(<span class="fstat-no" title="function not covered" >() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (checkCondition()) {</span>
+<span class="cstat-no" title="statement not covered" >        clearTimeout(timeoutId)</span>
+<span class="cstat-no" title="statement not covered" >        clearInterval(interval)</span>
+<span class="cstat-no" title="statement not covered" >        resolve()</span>
       }
     }, intervalMs)
   })
@@ -139,7 +139,7 @@ export function waitUntil({ checkCondition, intervalMs = 250<span class="branch-
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-12-20T12:13:27.730Z
+                at 2026-01-30T12:17:15.284Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
