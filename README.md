@@ -29,10 +29,9 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
   - [Requirements](#requirements)
   - [Installation](#installation)
   - [Getting started](#getting-started)
-    - [1. Wrap your application (or component) in `<FingerprintProvider>`.](#1-wrap-your-application-or-component-in-FingerprintProvider)
+    - [1. Wrap your application (or component) in `<FingerprintProvider>`.](#1-wrap-your-application-or-component-in-fingerprintprovider)
     - [2. Use the `useVisitorData()` hook in your components to identify visitors](#2-use-the-usevisitordata-hook-in-your-components-to-identify-visitors)
   - [Linking and tagging information](#linking-and-tagging-information)
-  - [Caching strategy](#caching-strategy)
   - [Error handling](#error-handling)
   - [API Reference](#api-reference)
   - [Support and feedback](#support-and-feedback)
@@ -46,7 +45,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
 - For Typescript users: Typescript 4.8 or higher
 
 > [!NOTE]
-> This package assumes you have a Fingerprint subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint and FingerprintJS](https://docs.fingerprint.com/docs/identification-vs-fingerprintjs).
+> This package assumes you have a Fingerprint subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint and FingerprintJS](https://fingerprint.com/github/).
 
 ## Installation
 
