@@ -4,6 +4,7 @@
 ### ⚠ BREAKING CHANGES
 
 * The SDK api has changed to match changes introduced in V4 version of the agent.
+* The default caching strategy has changed from `sessionStorage` caching to **no caching by default**, aligned with the underlying [JavaScript agent v4 default](https://docs.fingerprint.com/reference/js-agent-v4-start-function#cache).
 
 ### Features
 
