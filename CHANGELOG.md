@@ -5,7 +5,7 @@
 
 * The SDK api has changed to match changes introduced in V4 version of the agent.
 * Response field names follow the JavaScript Agent v4 API. For example, `visitorId` is now `visitor_id`, `requestId` is now `event_id`, and other response fields use snake_case.
-* Caching is now off by default, use the `cache` option to configure it.
+* The default caching strategy has changed from `sessionStorage` caching to **no caching by default**, aligned with the underlying [JavaScript agent v4 default](https://docs.fingerprint.com/reference/js-agent-v4-start-function#cache).
 
 ### Features
 
