@@ -14,7 +14,7 @@
   <a href="https://www.npmjs.com/package/@fingerprint/react"><img src="https://img.shields.io/npm/dm/@fingerprint/react.svg" alt="Monthly downloads from NPM"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/:license-mit-blue.svg" alt="MIT license"></a>
   <a href="https://discord.gg/39EpE2neBg"><img src="https://img.shields.io/discord/852099967190433792?style=logo&label=Discord&logo=Discord&logoColor=white" alt="Discord server"></a>
-  <a href="https://fingerprintjs.github.io/react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Discord server"></a>
+  <a href="https://fingerprintjs.github.io/react/"><img src="https://img.shields.io/badge/-Documentation-green" alt="Documentation"></a>
 </p>
 
 # Fingerprint React
@@ -42,7 +42,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
 - React 18 or higher
 - For Preact users: Preact 10.3 or higher
 - For Next.js users: Next.js 13.1 or higher
-- For Typescript users: Typescript 4.8 or higher
+- For TypeScript users: TypeScript 4.8 or higher
 
 > [!NOTE]
 > This package assumes you have a Fingerprint subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint and FingerprintJS](https://fingerprint.com/github/).
@@ -76,8 +76,8 @@ To get your API key and get started, see the [Fingerprint Quick Start Guide](htt
 
 - Set `apiKey` to your Fingerprint [Public API Key](https://dashboard.fingerprint.com/api-keys).
 - Set `region` if you have chosen a non-global [region](https://docs.fingerprint.com/docs/regions) during registration.
-- Set `endpoint` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
-- You can use all the [start options](https://docs.fingerprint.com/reference/js-agent-v4-start-function#start-options) available in the JavaScript agent `load` function.
+- Set `endpoints` if you are using [one of our proxy integrations to increase accuracy](https://docs.fingerprint.com/docs/protecting-the-javascript-agent-from-adblockers) and effectiveness of visitor identification.
+- You can use all the [start options](https://docs.fingerprint.com/reference/js-agent-v4-start-function#start-options) available in the JavaScript agent `start` function.
 
 ```jsx
 // src/index.js
@@ -85,7 +85,6 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {
   FingerprintProvider,
-  FingerprintJSPro,
 } from '@fingerprint/react'
 import App from './App'
 
@@ -115,7 +114,7 @@ function App() {
     return <div>Loading...</div>
   }
   if (error) {
-    return <div>An error occured: {error.message}</div>
+    return <div>An error occurred: {error.message}</div>
   }
 
   if (isFetched) {
@@ -161,7 +160,7 @@ function App() {
             .then((data) => {
               // Do something with the visitor data, for example,
               // append visitor data to the form data to send to your server
-              console.log(data)
+              console.log(data.visitor_id)
             })
             .catch((error) => {
               // Handle error
@@ -188,7 +187,7 @@ export default App
 
 ## Linking and tagging information
 
-The `visitorId` provided by Fingerprint Identification is especially useful when combined with information you already know about your users, for example, account IDs, order IDs, etc. To learn more about various applications of the `linkedId` and `tag`, see [Linking and tagging information](https://docs.fingerprint.com/docs/tagging-information).
+The visitor ID provided by Fingerprint Identification is especially useful when combined with information you already know about your users, for example, account IDs, order IDs, etc. To learn more about various applications of the `linkedId` and `tag`, see [Linking and tagging information](https://docs.fingerprint.com/docs/tagging-information).
 
 Associate the visitor ID with your data using the `linkedId` or `tag` parameter of the options object passed into the `useVisitorData()` hook or the `getData` function:
 
@@ -216,7 +215,7 @@ See the full [generated API reference](https://fingerprintjs.github.io/react/).
 
 ## Support and feedback
 
-To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [source-availalbe FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
+To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
 
 ## License
 

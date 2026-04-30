@@ -4,6 +4,8 @@
 ### ⚠ BREAKING CHANGES
 
 * The SDK api has changed to match changes introduced in V4 version of the agent.
+* Response field names follow the JavaScript Agent v4 API. For example, `visitorId` is now `visitor_id`, `requestId` is now `event_id`, and other response fields use snake_case.
+* Caching is now off by default, use the `cache` option to configure it.
 
 ### Features
 
