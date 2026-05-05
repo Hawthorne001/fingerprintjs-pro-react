@@ -94,7 +94,7 @@
 
 ### Features
 
-* update @fingerprintjs/fingerprintjs-pro-spa to 1.2.0, add FingerprintJSPro export ([8066afe](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/8066afe0a285f1b8ace4c1debe74860034752655))
+* update @fingerprintjs/fingerprintjs-pro-spa to 1.2.0, add agent export ([8066afe](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/8066afe0a285f1b8ace4c1debe74860034752655))
 
 ## [2.5.1](https://github.com/fingerprintjs/fingerprintjs-pro-react/compare/v2.5.0...v2.5.1) (2023-09-14)
 
@@ -275,7 +275,7 @@
 
 * **deps:** bump terser from 4.8.0 to 4.8.1 in /examples/preact ([6947ad5](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/6947ad553a39107736affb43ad1e0bbfce5c09a9))
 * **deps:** bump terser from 5.13.1 to 5.14.2 in /examples/spa ([e94c1ce](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/e94c1ce1106795f88390545f1a76a979e77c2f20))
-* **deps:** update FingerprintJS Pro SPA to 0.5.0 ([e4f4039](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/e4f4039ef0e023003ee03f5dbe67b3e593f50a42))
+* **deps:** update SPA package to 0.5.0 ([e4f4039](https://github.com/fingerprintjs/fingerprintjs-pro-react/commit/e4f4039ef0e023003ee03f5dbe67b3e593f50a42))
 
 
 ### Documentation

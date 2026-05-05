@@ -45,7 +45,7 @@ Fingerprint is a device intelligence platform offering industry-leading accuracy
 - For TypeScript users: TypeScript 4.8 or higher
 
 > [!NOTE]
-> This package assumes you have a Fingerprint subscription or trial, it is not compatible with the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint and FingerprintJS](https://fingerprint.com/github/).
+> This package assumes you have a Fingerprint subscription or trial, it is not compatible with the [open-source FingerprintJS](https://github.com/fingerprintjs/fingerprintjs). See our documentation to learn more about the [differences between Fingerprint and the open-source FingerprintJS](https://fingerprint.com/github/).
 
 ## Installation
 
@@ -217,7 +217,7 @@ See the full [generated API reference](https://fingerprintjs.github.io/react/).
 
 ## Support and feedback
 
-To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/react/issues). If you need private support, please email us at `oss-support@fingerprint.com`. If you'd like to have a similar React wrapper for the [source-available FingerprintJS](https://github.com/fingerprintjs/fingerprintjs), consider creating an issue in the main [FingerprintJS repository](https://github.com/fingerprintjs/fingerprintjs/issues).
+To ask questions or provide feedback, use [Issues](https://github.com/fingerprintjs/react/issues). If you need private support, please email us at `oss-support@fingerprint.com`.
 
 ## License
 
