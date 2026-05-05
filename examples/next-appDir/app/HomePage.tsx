@@ -12,16 +12,14 @@ const HomePage = () => {
 
   return (
     <div className={styles.container}>
-      <h1>FingerprintJS Pro NextJS Demo</h1>
+      <h1>Fingerprint React SDK Next.js Demo</h1>
       <div className={styles.testArea}>
-        <div className={styles.description}>
-          Lets load FingerprintJS Pro Agent using react integration and check next things:
-        </div>
+        <div className={styles.description}>Lets load Fingerprint using the React SDK and check the following:</div>
         <ol className={styles.actionPoints}>
-          <li>There is no errors on server</li>
-          <li>There is no errors on client</li>
-          <li>In the field below visitor data was loaded</li>
-          <li>Try controls to test additional params</li>
+          <li>There are no errors on the server</li>
+          <li>There are no errors on the client</li>
+          <li>The visitor data is loaded in the field below</li>
+          <li>Try controls to test additional parameters</li>
         </ol>
         <div className={styles.controls}>
           <button onClick={reloadData} type='button'>

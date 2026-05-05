@@ -1,5 +1,5 @@
-This example demonstrates the usage of Fingerprint Pro inside Next 14's `app` directory approach.\
-Note how you can use Fingerprint Pro inside a React Server Component without issues as it is correctly executed in the browser only.
+This example demonstrates the usage of Fingerprint inside Next 14's `app` directory approach.\
+Note how you can use Fingerprint inside a React Server Component without issues as it is correctly executed in the browser only.
 See [../next](../next/README.md) for an example using the classic `pages` approach.
 
 ## Setting up
@@ -13,7 +13,7 @@ In order to try out this example:
 To get the API key:
 
 - Go to Fingerprint Dashboard > [API Keys](https://dashboard.fingerprint.com/api-keys) and find it there.
-- If you don't have a Fingerprint Pro account, [sign up for free](https://dashboard.fingerprint.com/signup/).
+- If you don't have a Fingerprint account, [sign up for free](https://dashboard.fingerprint.com/signup/).
 
 ### Installing dependencies
 

@@ -1,7 +1,7 @@
 {
   "name": "@fingerprint/react",
   "version": "3.0.0",
-  "description": "FingerprintJS Pro React SDK",
+  "description": "Fingerprint React SDK",
   "main": "dist/fingerprint-react.js",
   "module": "dist/fingerprint-react.mjs",
   "types": "dist/fingerprint-react.d.ts",
@@ -79,6 +79,7 @@
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.3",
     "eslint-config-preact": "^1.3.0",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "7.34.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^9.0.11",

@@ -10,16 +10,14 @@ const App: FunctionalComponent = () => {
 
   return (
     <div id='preact_root' className='container'>
-      <h1>FingerprintJS Pro Preact Demo</h1>
+      <h1>Fingerprint React SDK Preact Demo</h1>
       <div className='testArea'>
-        <div className='description'>
-          Lets load FingerprintJS Pro Agent using react integration and check next things:
-        </div>
+        <div className='description'>Lets load Fingerprint using the React SDK and check the following:</div>
         <ol className='actionPoints'>
-          <li>There is no errors on server</li>
-          <li>There is no errors on client</li>
-          <li>In the field below visitor data was loaded</li>
-          <li>Try controls to test additional params</li>
+          <li>There are no errors on the server</li>
+          <li>There are no errors on the client</li>
+          <li>The visitor data is loaded in the field below</li>
+          <li>Try controls to test additional parameters</li>
         </ol>
         <div className='controls'>
           <button onClick={reloadData} type='button'>
