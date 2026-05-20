@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - test
 
 permissions:
   id-token: write  # Required for Trusted Publishing: https://docs.npmjs.com/trusted-publishers
