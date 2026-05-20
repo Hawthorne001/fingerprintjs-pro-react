@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - test
 
 permissions:
   id-token: write  # Required for Trusted Publishing: https://docs.npmjs.com/trusted-publishers
@@ -18,4 +17,3 @@ jobs:
       useTrustedPublishing: true
     secrets:
       APP_PRIVATE_KEY: ${{ secrets.APP_PRIVATE_KEY }}
-      NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
