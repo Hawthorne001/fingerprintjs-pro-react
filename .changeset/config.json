@@ -14,10 +14,10 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "fingerprintjs-react-spa-example",
-    "next",
+    "next-example",
     "next-appDir",
-    "preact",
-    "vite",
+    "preact-example",
+    "vite-example",
     "webpack-based"
   ]
 }
