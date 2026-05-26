@@ -1,0 +1,23 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.1.3/schema.json",
+  "changelog": [
+    "@fingerprintjs/changesets-changelog-format",
+    {
+      "repo": "fingerprintjs/react"
+    }
+  ],
+  "commit": false,
+  "fixed": [],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": [
+    "fingerprintjs-react-spa-example",
+    "next",
+    "next-appDir",
+    "preact",
+    "vite",
+    "webpack-based"
+  ]
+}
