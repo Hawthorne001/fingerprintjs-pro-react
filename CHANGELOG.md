@@ -1,3 +1,5 @@
+# Fingerprint React SDK
+
 ## 3.0.1-test.0
 
 ### Patch Changes
