@@ -1,10 +1,10 @@
-## [3.0.0](https://github.com/fingerprintjs/react/compare/v2.7.1...v3.0.0) (2026-01-29)
-
 ## 3.0.1-test.0
 
 ### Patch Changes
 
 - Sample changeset to test release pipeline ([00a7e95](https://github.com/fingerprintjs/react/commit/00a7e951a2e04a7cda4cc72c077cd076be7d9baf))
+
+## [3.0.0](https://github.com/fingerprintjs/react/compare/v2.7.1...v3.0.0) (2026-01-29)
 
 ### ⚠ BREAKING CHANGES
 
