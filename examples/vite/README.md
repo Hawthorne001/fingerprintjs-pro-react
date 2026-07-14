@@ -11,7 +11,7 @@ To try this example:
 1. Create a `.env` or `.env.local` file in this directory.
 2. Set `VITE_FPJS_PUBLIC_API_KEY` to your Fingerprint Public API key.
 
-Find your API key in the Fingerprint Dashboard under [API Keys](https://dashboard.fingerprint.com/api-keys). If you do not have an account, [sign up for free](https://dashboard.fingerprint.com/signup/).
+Find your API key in the Fingerprint Dashboard under [API Keys](https://dashboard.fingerprint.com/api-keys). If you do not have an account, [sign up for free](https://dashboard.fingerprint.com/signup).
 
 ### Installing dependencies
 

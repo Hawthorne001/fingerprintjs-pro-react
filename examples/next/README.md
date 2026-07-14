@@ -12,7 +12,7 @@ In order to try out this example:
 To get the API key:
 
 - Go to Fingerprint Dashboard > [API Keys](https://dashboard.fingerprint.com/api-keys) and find it there.
-- If you don't have a Fingerprint account, [sign up for free](https://dashboard.fingerprint.com/signup/).
+- If you don't have a Fingerprint account, [sign up for free](https://dashboard.fingerprint.com/signup).
 
 ### Installing dependencies
 
