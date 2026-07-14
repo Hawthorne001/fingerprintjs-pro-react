@@ -63,10 +63,24 @@ To run tests you can use IDE instruments or just run:
 pnpm test
 ```
 
+To run tests once with a coverage report:
+
+```shell
+pnpm test:coverage
+```
+
 To check the distributive TypeScript declarations, build the project and run:
 
 ```shell
 pnpm test:dts
+```
+
+### API reference docs
+
+The API reference is generated from the source with [TypeDoc](https://typedoc.org/). Regenerate it into the (git-ignored) `docs/` folder with:
+
+```shell
+pnpm docs
 ```
 
 ### How to publish

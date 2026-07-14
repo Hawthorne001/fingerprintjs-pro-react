@@ -4,7 +4,7 @@
 
 In order to try out this example: 
 
-1. Create a `.env` file in this directory.
+1. Create a `.env` (or `.env.local`) file in this directory.
 2. Set the `PREACT_APP_FPJS_PUBLIC_API_KEY` environment variable to the value of your Fingerprint Public API key. 
 
 To get the API key:

@@ -92,7 +92,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 // <FingerprintProvider /> supports the same options as `start()` function.
 root.render(
   <FingerprintProvider
-    apiKey='your-public-api-key'
+    apiKey='PUBLIC_API_KEY'
     cache={{ storage: 'sessionStorage', duration: 3600 }}
   >
     <App />
