@@ -58,12 +58,14 @@ pnpm test:dts
 
 ### How to publish
 
-The library is automatically released and published to NPM on every push to the main branch if there are relevant changes using [semantic-release](https://github.com/semantic-release/semantic-release) with following plugins:
+Releases are managed with [changesets](https://github.com/changesets/changesets).
 
-- [@semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer)
-- [@semantic-release/release-notes-generator](https://github.com/semantic-release/release-notes-generator)
-- [@semantic-release/changelog](https://github.com/semantic-release/changelog)
-- [@semantic-release/npm](https://github.com/semantic-release/npm)
-- [@semantic-release/github](https://github.com/semantic-release/github)
+When you make a change that should be released, add a changeset to your pull request:
 
-The workflow must be approved by one of the maintainers, first.
+```shell
+pnpm changeset
+```
+
+This prompts you to select the bump type (`major`, `minor`, or `patch`) and to write a summary that becomes the changelog entry. Commit the generated file in `.changeset/` along with your changes.
+
+When PRs with changesets are merged to `main`, the [release workflow](.github/workflows/release.yml) opens (or updates) a "Version Packages" pull request that bumps the version and updates the changelog. Merging that pull request builds the package and publishes it to NPM.
