@@ -8,13 +8,14 @@ The main branch is locked for the push action. For proposing changes, use the st
 
 ### Development playground
 
-There are 4 demo pages for this integration:
+There are 6 demo pages for this integration:
 
 1. In `/examples/create-react-app` folder. It is a rich demo with scenarios of using different caching strategies. You can find more info about configuration and starting demo in the [readme](examples/create-react-app/README.md).
 2. In `/examples/next` folder. It is a demo built with NextJS that allows testing SSR scenarios. You can find more info about configuration and starting demo in the [readme](examples/next/README.md).
 3. In `/examples/next-appDir` folder. It is the same demo built with NextJS, but with new `app` directory approach. You can find more info about configuration and starting demo in the [readme](examples/next-appDir/README.md).
 4. In `/examples/preact` folder. It is a demo built with Preact. You can find more info about configuration and starting demo in the [readme](examples/preact/README.md).
-5. In `/examples/webpack-based` folder. It is a simple demo built with raw webpack.
+5. In `/examples/vite` folder. It is a demo built with Vite. You can find more info about configuration and starting demo in the [readme](examples/vite/README.md).
+6. In `/examples/webpack-based` folder. It is a simple demo built with raw webpack.
 
 ❗ Build projects before testing integration. First build the `@fingerprint/react` package, and then start any of the example apps.
 
