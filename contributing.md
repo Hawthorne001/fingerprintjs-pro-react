@@ -1,30 +1,37 @@
-# Contributing to Fingerprint React integration
+# Contributing to Fingerprint React SDK
 
 ## Working with code
 
-We prefer using [pnpm](https://pnpm.io/) for installing dependencies and running scripts.
+We use [pnpm](https://pnpm.io/) for installing dependencies and running scripts.
 
-The main branch is locked for the push action. For proposing changes, use the standard [pull request approach](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). It's recommended to discuss fixes or new functionality in the Issues, first.
-
-### Development playground
-
-There are 6 demo pages for this integration:
-
-1. In `/examples/create-react-app` folder. It is a rich demo with scenarios of using different caching strategies. You can find more info about configuration and starting demo in the [readme](examples/create-react-app/README.md).
-2. In `/examples/next` folder. It is a demo built with NextJS that allows testing SSR scenarios. You can find more info about configuration and starting demo in the [readme](examples/next/README.md).
-3. In `/examples/next-appDir` folder. It is the same demo built with NextJS, but with new `app` directory approach. You can find more info about configuration and starting demo in the [readme](examples/next-appDir/README.md).
-4. In `/examples/preact` folder. It is a demo built with Preact. You can find more info about configuration and starting demo in the [readme](examples/preact/README.md).
-5. In `/examples/vite` folder. It is a demo built with Vite. You can find more info about configuration and starting demo in the [readme](examples/vite/README.md).
-6. In `/examples/webpack-based` folder. It is a simple demo built with raw webpack.
-
-❗ Build projects before testing integration. First build the `@fingerprint/react` package, and then start any of the example apps.
+The main branch is locked for the push action. For proposing changes, use the standard [pull request approach](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). It's recommended to discuss fixes or new functionality in the Issues first.
 
 ### How to build
 
 Just run:
 
 ```shell
+pnpm install
 pnpm build
+```
+
+### Development playground
+
+Six demo apps are available:
+
+1. [`create-react-app`](examples/create-react-app/README.md) — a rich demo covering different caching strategies.
+2. [`next`](examples/next/README.md) — a Next.js demo for testing SSR scenarios.
+3. [`next-appDir`](examples/next-appDir/README.md) — the same Next.js demo using the `app` directory.
+4. [`preact`](examples/preact/README.md) — a Preact demo.
+5. [`vite`](examples/vite/README.md) — a Vite demo.
+6. [`webpack-based`](examples/webpack-based/README.md) — a demo using raw webpack.
+
+❗ Build the SDK before building/starting an example app. From the repository root, run:
+
+```shell
+pnpm build
+pnpm --filter vite-example build
+pnpm --filter next-example dev
 ```
 
 ### Code style
