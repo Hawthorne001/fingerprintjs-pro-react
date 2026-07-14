@@ -26,14 +26,19 @@ Six demo apps are available:
 5. [`vite`](examples/vite/README.md) — a Vite demo.
 6. [`webpack-based`](examples/webpack-based/README.md) — a demo using raw webpack.
 
-❗ Build the SDK before building/starting an example app. From the repository root, run:
+Build the SDK before building or starting an example app. From the repository root, run:
 
 ```shell
 pnpm build
-pnpm --filter vite-example build
-pnpm --filter next-example dev
 ```
 
+Build an example with `pnpm --filter <package-name> build`, or start it with
+`pnpm --filter <package-name> dev`.
+
+For example:
+```shell
+pnpm --filter vite-example dev
+```
 ### Code style
 
 The code style is controlled by [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/). Run to check that the code style is ok:

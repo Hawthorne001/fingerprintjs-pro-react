@@ -87,7 +87,7 @@ import ReactDOM from 'react-dom/client'
 import { FingerprintProvider } from '@fingerprint/react'
 import App from './App'
 
-const root = ReactDOM.createRoot(document.getElementById('app'))
+const root = ReactDOM.createRoot(document.getElementById('root'))
 
 // <FingerprintProvider /> supports the same options as `start()` function.
 root.render(
