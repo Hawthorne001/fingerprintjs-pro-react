@@ -42,15 +42,6 @@ const config = [
       '@typescript-eslint/no-unsafe-assignment': 'off',
     },
   },
-  {
-    // peerDependencies declare react >=18, so React 19-only idioms (the `use` hook,
-    // bare `<Context>` as a provider) would break React 18 consumers.
-    files: ['src/**/*.{ts,tsx}', '__tests__/**/*.{ts,tsx}'],
-    rules: {
-      '@eslint-react/no-use-context': 'off',
-      '@eslint-react/no-context-provider': 'off',
-    },
-  },
 ]
 
 export default config
