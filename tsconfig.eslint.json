@@ -12,5 +12,6 @@
 		"examples/**/*.ts",
 		"examples/**/*.tsx",
 		"examples/vite/src/vite-env.d.ts"
-	]
+	],
+	"exclude": ["examples/**/vite.config.ts", "examples/preact/**"]
 }

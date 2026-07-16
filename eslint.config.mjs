@@ -29,6 +29,10 @@ const config = [
     },
   },
   {
+    files: ['examples/preact/**/*.{ts,tsx}', 'examples/**/vite.config.ts'],
+    ...tseslint.configs.disableTypeChecked,
+  },
+  {
     files: ['**/*.{js,mjs,cjs,jsx}'],
     ...tseslint.configs.disableTypeChecked,
   },
