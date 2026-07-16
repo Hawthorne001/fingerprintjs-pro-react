@@ -207,6 +207,9 @@ importers:
         specifier: ^6.4.0
         version: 6.7.0(preact@10.19.6)
     devDependencies:
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.6.1
       preact-cli:
         specifier: ^3.5.1
         version: 3.5.1(@types/babel__core@7.20.5)(bluebird@3.7.2)(eslint@10.7.0(jiti@2.6.1))(preact-render-to-string@6.7.0(preact@10.19.6))(preact@10.19.6)(typescript@5.9.3)
