@@ -78,7 +78,7 @@ function ProviderWithEnv({
     return customLoader ? customLoader.start(startParams) : start(startParams)
   }, [agentOptions, env])
 
-  const clientRef = useRef<Agent>()
+  const clientRef = useRef<Agent | undefined>(undefined)
 
   const getClient = useCallback(() => {
     if (isSSR()) {

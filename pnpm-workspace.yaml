@@ -11,3 +11,4 @@ allowBuilds:
   core-js-pure: false
   esbuild: true
   fsevents: false
+  sharp: true

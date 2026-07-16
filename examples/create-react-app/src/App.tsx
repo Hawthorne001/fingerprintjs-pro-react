@@ -58,7 +58,7 @@ function MainNav() {
         onChange={(event) => {
           const newValue = event.currentTarget.value
           setValue(newValue)
-          navigate(`${newValue}/home`)
+          void navigate(`${newValue}/home`)
         }}
         value={value}
       >
