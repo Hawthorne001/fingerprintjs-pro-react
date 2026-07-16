@@ -4,6 +4,27 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@types/node':
+      specifier: ^26.1.1
+      version: 26.1.1
+    '@types/react':
+      specifier: ^18.3.31
+      version: 18.3.31
+    '@types/react-dom':
+      specifier: ^18.3.7
+      version: 18.3.7
+    react:
+      specifier: ^18.3.1
+      version: 18.3.1
+    react-dom:
+      specifier: ^18.3.1
+      version: 18.3.1
+    typescript:
+      specifier: ^6.0.3
+      version: 6.0.3
+
 importers:
 
   .:
@@ -52,13 +73,13 @@ importers:
         specifier: ^14.6.1
         version: 14.6.1(@testing-library/dom@10.4.1)
       '@types/node':
-        specifier: ^26.1.1
+        specifier: 'catalog:'
         version: 26.1.1
       '@types/react':
-        specifier: ^18.3.31
+        specifier: 'catalog:'
         version: 18.3.31
       '@types/react-dom':
-        specifier: ^18.3.7
+        specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
       '@vitest/coverage-istanbul':
         specifier: ^4.1.10
@@ -82,10 +103,10 @@ importers:
         specifier: 3.9.5
         version: 3.9.5
       react:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
       react-router-dom:
         specifier: ^7.18.1
@@ -103,7 +124,7 @@ importers:
         specifier: ^0.28.20
         version: 0.28.20(typescript@6.0.3)
       typescript:
-        specifier: ^6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       typescript-eslint:
         specifier: ^8.64.0
@@ -127,10 +148,10 @@ importers:
         specifier: workspace:*
         version: link:../..
       react:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
       react-router-dom:
         specifier: ^7.18.1
@@ -138,8 +159,9 @@ importers:
       react-scripts:
         specifier: 5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.29.7(@babel/core@7.29.7))(@babel/plugin-transform-react-jsx@7.29.7(@babel/core@7.29.7))(@types/babel__core@7.20.5)(@types/webpack@4.41.40)(esbuild@0.28.1)(eslint@10.7.0(jiti@1.21.7))(react@18.3.1)(type-fest@0.21.3)(typescript@6.0.3)(yaml@2.9.0)
+    devDependencies:
       typescript:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 6.0.3
 
   examples/next:
@@ -152,22 +174,22 @@ importers:
         version: 14.2.35(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/node':
-        specifier: ^26.1.1
+        specifier: 'catalog:'
         version: 26.1.1
       '@types/react':
-        specifier: ^18.3.31
+        specifier: 'catalog:'
         version: 18.3.31
       '@types/react-dom':
-        specifier: ^18.3.7
+        specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
       react:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
       typescript:
-        specifier: ^6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
 
   examples/next-appDir:
@@ -180,22 +202,22 @@ importers:
         version: 14.2.35(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@types/node':
-        specifier: ^26.1.1
+        specifier: 'catalog:'
         version: 26.1.1
       '@types/react':
-        specifier: ^18.3.31
+        specifier: 'catalog:'
         version: 18.3.31
       '@types/react-dom':
-        specifier: ^18.3.7
+        specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
       react:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
       typescript:
-        specifier: ^6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
 
   examples/preact:
@@ -220,7 +242,7 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1
       typescript:
-        specifier: ^6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
 
   examples/vite:
@@ -229,26 +251,26 @@ importers:
         specifier: workspace:*
         version: link:../..
       react:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: ^18.3.1
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@types/node':
-        specifier: ^26.1.1
+        specifier: 'catalog:'
         version: 26.1.1
       '@types/react':
-        specifier: ^18.3.31
+        specifier: 'catalog:'
         version: 18.3.31
       '@types/react-dom':
-        specifier: ^18.3.7
+        specifier: 'catalog:'
         version: 18.3.7(@types/react@18.3.31)
       '@vitejs/plugin-react':
         specifier: ^6.0.3
         version: 6.0.3(vite@8.1.4(@types/node@26.1.1)(esbuild@0.28.1)(jiti@2.6.1)(terser@5.49.0)(yaml@2.9.0))
       typescript:
-        specifier: ^6.0.3
+        specifier: 'catalog:'
         version: 6.0.3
       vite:
         specifier: ^8.1.4
@@ -260,10 +282,10 @@ importers:
         specifier: workspace:*
         version: link:../..
       react:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 18.3.1
       react-dom:
-        specifier: '*'
+        specifier: 'catalog:'
         version: 18.3.1(react@18.3.1)
     devDependencies:
       '@babel/core':

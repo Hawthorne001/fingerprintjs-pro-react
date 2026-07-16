@@ -21,10 +21,8 @@
     "webpack-dev-server": "^6.0.0"
   },
   "dependencies": {
-    "@fingerprint/react": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "@fingerprint/react": "workspace:*",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   }
 }
