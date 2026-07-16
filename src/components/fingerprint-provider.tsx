@@ -32,13 +32,7 @@ export interface FingerprintProviderOptions extends StartOptions {
  * For the implementation, see `ProviderWithEnv` component.
  */
 export function FingerprintProvider(props: PropsWithChildren<FingerprintProviderOptions>) {
-  const propsWithEnv = props as PropsWithChildren<ProviderWithEnvProps>
-
-  return (
-    <WithEnvironment>
-      <ProviderWithEnv {...propsWithEnv} />
-    </WithEnvironment>
-  )
+  return <WithEnvironment>{(env) => <ProviderWithEnv {...props} env={env} />}</WithEnvironment>
 }
 
 interface ProviderWithEnvProps extends FingerprintProviderOptions {
@@ -71,15 +65,10 @@ function ProviderWithEnv({
   const createClient = useCallback(() => {
     const customLoader = getCustomLoader(agentOptions)
 
-    let integrationInfo = `react-sdk/${packageInfo.version}`
+    const envInfo = env.version !== undefined && env.version !== '' ? `${env.name}/${env.version}` : env.name
+    const integrationInfo = `react-sdk/${packageInfo.version}/${envInfo}`
 
-    if (env) {
-      const envInfo = env.version ? `${env.name}/${env.version}` : env.name
-
-      integrationInfo += `/${envInfo}`
-    }
-
-    const mergedIntegrationInfo = [...(agentOptions.integrationInfo || []), integrationInfo]
+    const mergedIntegrationInfo = [...(agentOptions.integrationInfo ?? []), integrationInfo]
 
     const startParams = {
       ...agentOptions,
@@ -96,9 +85,7 @@ function ProviderWithEnv({
       throw new Error('FingerprintProvider client cannot be used in SSR')
     }
 
-    if (!clientRef.current) {
-      clientRef.current = createClient()
-    }
+    clientRef.current ??= createClient()
 
     return clientRef.current
   }, [createClient])
@@ -128,7 +115,7 @@ function ProviderWithEnv({
   useEffect(() => {
     // By default, the client is always initialized once during the first render and won't be updated
     // if the configuration changes. Use `forceRebuild` flag to disable this behaviour.
-    if (!clientRef.current || forceRebuild) {
+    if (!clientRef.current || forceRebuild === true) {
       clientRef.current = createClient()
     }
   }, [forceRebuild, agentOptions, getOptions, createClient])

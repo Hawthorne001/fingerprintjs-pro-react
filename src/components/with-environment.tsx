@@ -1,12 +1,11 @@
-import { cloneElement, Component } from 'react'
+import { Component, type JSX } from 'react'
 
 import { getEnvironment } from '../get-env'
 import { type DetectEnvParams } from '../detect-env'
 import { type EnvDetails } from '../env.types'
 
 export interface WithEnvironmentProps {
-  // exactly one element must be provided
-  children: JSX.Element
+  children: (env: EnvDetails) => JSX.Element
 }
 
 /**
@@ -15,21 +14,15 @@ export interface WithEnvironmentProps {
  *
  * @example
  * ```jsx
- * const App = ({ env }: { env: EnvDetails }) => `I'm running in ${env.name}!`
- *
  * <WithEnvironment>
- *  <App />
+ *   {(env) => <App env={env} />}
  * </WithEnvironment>
  * ```
  */
 class WithEnvironment extends Component<WithEnvironmentProps> {
-  constructor(props: WithEnvironmentProps) {
-    super(props)
-  }
-
   detectedEnv: EnvDetails | undefined
 
-  render(...args: any[]) {
+  render(...args: unknown[]) {
     if (!this.detectedEnv) {
       // unlike React, class components in Preact always receive `props` and `state` in render()
       // this is true for both Preact 8.x and 10.x
@@ -41,8 +34,7 @@ class WithEnvironment extends Component<WithEnvironmentProps> {
       this.detectedEnv = getEnvironment(detectParams)
     }
 
-    // passes the `env` down as a prop
-    return cloneElement(this.props.children, { env: this.detectedEnv })
+    return this.props.children(this.detectedEnv)
   }
 }
 

@@ -1,5 +1,5 @@
 import { useVisitorData, UseVisitorDataReturn } from '../src'
-import { act, render, renderHook } from '@testing-library/react'
+import { act, render, renderHook, screen } from '@testing-library/react'
 import { actWait, createWrapper, wait } from './helpers'
 import { useEffect, useState } from 'react'
 import userEvent from '@testing-library/user-event'
@@ -32,7 +32,7 @@ describe('useVisitorData', () => {
     mockStart.mockReturnValue(mockAgent)
   })
 
-  it('should provide the Fp context', async () => {
+  it('should provide the Fp context', () => {
     const wrapper = createWrapper()
     const {
       result: { current },
@@ -97,7 +97,7 @@ describe('useVisitorData', () => {
     )
   })
 
-  it("shouldn't call getData on mount if 'immediate' option is set to false", async () => {
+  it("shouldn't call getData on mount if 'immediate' option is set to false", () => {
     mockGet.mockImplementation(() => mockGetResult)
 
     const wrapper = createWrapper()
@@ -141,15 +141,22 @@ describe('useVisitorData', () => {
 
       return (
         <>
-          <button onClick={() => setTag((prev) => prev + 1)}>Change options</button>
+          <button
+            onClick={() => {
+              setTag((prev) => prev + 1)
+            }}
+          >
+            Change options
+          </button>
           <pre>{JSON.stringify(data)}</pre>
         </>
       )
     }
 
     const Wrapper = createWrapper()
+    const user = userEvent.setup()
 
-    const { container } = render(
+    render(
       <Wrapper>
         <Component />
       </Wrapper>
@@ -157,9 +164,7 @@ describe('useVisitorData', () => {
 
     await actWait(1000)
 
-    act(() => {
-      userEvent.click(container.querySelector('button')!)
-    })
+    await user.click(screen.getByRole('button', { name: 'Change options' }))
 
     await actWait(1000)
 
@@ -278,33 +283,37 @@ describe('useVisitorData', () => {
       getDataValues.push(getData)
       return (
         <>
-          <button onClick={() => setCount((count) => count + 1)}>Increment count</button>
+          <button
+            onClick={() => {
+              setCount((count) => count + 1)
+            }}
+          >
+            Increment count
+          </button>
           <pre>{JSON.stringify(data)}</pre>
         </>
       )
     }
 
     const Wrapper = createWrapper()
+    const user = userEvent.setup()
 
-    const { container } = render(
+    render(
       <Wrapper>
         <Component />
       </Wrapper>
     )
 
-    await act(async () => {
-      await userEvent.click(container.querySelector('button')!)
-    })
+    const incrementButton = screen.getByRole('button', { name: 'Increment count' })
+    await user.click(incrementButton)
 
-    await act(async () => {
-      // This second click needs to be in a separate act otherwise
-      // React will coalesce the state updates to the count into a
-      // a single update. Meaning that count will jump from 0 to 2
-      // in between renders if this click were in the previous act block.
-      // This ensures that the case is covered where the options
-      // object does not semantically change.
-      await userEvent.click(container.querySelector('button')!)
-    })
+    // This second click needs to be a separate awaited interaction otherwise
+    // React will coalesce the state updates to the count into a
+    // a single update. Meaning that count will jump from 0 to 2
+    // in between renders if this click were in the previous act block.
+    // This ensures that the case is covered where the options
+    // object does not semantically change.
+    await user.click(incrementButton)
 
     expect(getDataValues).toHaveLength(4)
     expect(getDataValues[0]).toBe(getDataValues[1])

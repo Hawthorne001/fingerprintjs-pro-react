@@ -5,8 +5,16 @@ import App from './App.tsx'
 import { FingerprintProvider } from '@fingerprint/react'
 
 const apiKey = import.meta.env.VITE_FPJS_PUBLIC_API_KEY
+if (apiKey === undefined || apiKey === '') {
+  throw new Error('VITE_FPJS_PUBLIC_API_KEY is not set')
+}
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')
+if (rootElement === null) {
+  throw new Error('Root element not found')
+}
+
+createRoot(rootElement).render(
   <StrictMode>
     <FingerprintProvider apiKey={apiKey}>
       <App />
