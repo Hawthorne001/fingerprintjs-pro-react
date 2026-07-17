@@ -2,7 +2,7 @@ import { FingerprintContext, FingerprintContextInterface, VisitorQueryResult } f
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
 import deepEquals from 'fast-deep-equal'
 import { toError } from './utils/to-error'
-import { assertIsTruthy } from './utils/assert-is-truthy'
+import { assertIsDefined } from './utils/assert-is-defined'
 import { GetOptions, GetResult } from '@fingerprint/agent'
 
 export interface UseVisitorDataConfig {
@@ -40,7 +40,7 @@ export type UseVisitorDataReturn = VisitorQueryResult & {
 export function useVisitorData(
   { immediate, ...getOptions }: UseVisitorDataOptions = { immediate: true }
 ): UseVisitorDataReturn {
-  assertIsTruthy(getOptions, 'getOptions')
+  assertIsDefined(getOptions, 'getOptions')
 
   const { getVisitorData } = useContext<FingerprintContextInterface>(FingerprintContext)
 
@@ -54,7 +54,7 @@ export function useVisitorData(
 
   const getData = useCallback<UseVisitorDataReturn['getData']>(
     async (params = {}) => {
-      assertIsTruthy(params, 'getDataParams')
+      assertIsDefined(params, 'getDataParams')
 
       try {
         setQueryState({
@@ -96,8 +96,10 @@ export function useVisitorData(
 
   useEffect(() => {
     if (immediate) {
-      getData().catch((error) => {
-        console.error(`Failed to fetch visitor data on mount: ${error}`)
+      // TODO: refactor mount fetch to avoid synchronous setState inside the effect
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- preserve existing getData() mount behavior
+      getData().catch((unknownError: unknown) => {
+        console.error(`Failed to fetch visitor data on mount: ${String(unknownError)}`)
       })
     }
   }, [immediate, getData])

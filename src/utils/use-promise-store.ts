@@ -1,13 +1,36 @@
 import { GetOptions, GetResult } from '@fingerprint/agent'
-import { useCallback } from 'react'
-import { useConst } from './use-const'
+import { useCallback, useState } from 'react'
+
+function serializeCacheValue(value: unknown): string {
+  if (value === undefined) {
+    return 'undefined:'
+  }
+
+  if (value === null) {
+    return 'null:'
+  }
+
+  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+    return `${typeof value}:${String(value)}`
+  }
+
+  try {
+    return `json:${JSON.stringify(value)}`
+  } catch {
+    return `unserializable:${typeof value}`
+  }
+}
 
 function getCacheKey(options?: GetOptions) {
   if (!options) {
     return ''
   }
 
-  return `${options.tag}-${options.linkedId}-${options.timeout}`
+  return JSON.stringify([
+    serializeCacheValue(options.tag),
+    serializeCacheValue(options.linkedId),
+    serializeCacheValue(options.timeout),
+  ])
 }
 
 export type UsePromiseStoreReturn = {
@@ -25,7 +48,7 @@ export type UsePromiseStoreReturn = {
  * requests with the same key are not duplicated while they are still pending.
  */
 export function usePromiseStore(): UsePromiseStoreReturn {
-  const store = useConst(new Map<string, Promise<GetResult>>())
+  const [store] = useState(() => new Map<string, Promise<GetResult>>())
 
   const doRequest = useCallback(
     (requestCallback: () => Promise<GetResult>, options?: GetOptions) => {
