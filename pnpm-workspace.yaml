@@ -2,12 +2,30 @@ packages:
   - examples/*
   - ./
 
+# Shared versions for deps duplicated across the root package and examples.
+# Referenced as "catalog:" so every workspace project resolves the exact same
+# copy (avoids version-mismatch bugs in the shared type-checked ESLint project)
+# and version bumps only need to happen in one place.
+catalog:
+  react: ^18.3.1
+  react-dom: ^18.3.1
+  "@types/react": ^18.3.31
+  "@types/react-dom": ^18.3.7
+  "@types/node": ^26.1.1
+  # Pinned to the 6.0.x line, not `^6.0.3`: typescript-eslint@8.64.0's peer
+  # range caps at `typescript <6.1.0`, and a caret here would let a 6.1.0+
+  # patch/minor silently break the lint type-check layer.
+  typescript: ~6.0.3
+
 # pnpm 11 blocks dependency build scripts by default. esbuild powers the Vite
 # build, so allow it; the core-js scripts only print funding notices and the
 # legacy fsevents@1 native build fails on modern Node (it is optional), so keep
-# those disabled.
+# those disabled. sharp is an optional native dependency of Next.js (image
+# optimization) pulled in by the next/next-appDir examples; its install script
+# compiles/downloads the prebuilt binary, so it needs to run.
 allowBuilds:
   core-js: false
   core-js-pure: false
   esbuild: true
   fsevents: false
+  sharp: true
